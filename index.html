@@ -1,0 +1,853 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nueva York con Noemi</title>
+<meta name="description" content="Plan de viaje Nueva York 22–28 sep 2026: vuelos, mapa de zonas, alojamiento, itinerario, compras y checklist">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F1F3F6; --surface:#FFFFFF; --surface-2:#E7EBF0; --ink:#16202B; --ink-2:#4A5563; --ink-3:#7B8794;
+  --line:#D3D9E1; --accent:#F5B400; --accent-ink:#16202B; --navy:#1F3A5F; --navy-soft:#DCE6F2;
+  --ok:#2E7D4F; --ok-soft:#DDF0E3; --warn:#B8730A; --warn-soft:#FBEBC8; --bad:#C8432B; --bad-soft:#F8DDD6;
+  --z1:#7FCB8F; --z2:#F3DA6B; --z3:#F2A24E; --z4:#E4614C; --park:#CDE3C9; --zink:#16202B;
+  --shadow:0 1px 2px rgba(22,32,43,.06),0 6px 20px rgba(22,32,43,.06);
+  --mast:#16202B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F151C; --surface:#161E27; --surface-2:#1F2933; --ink:#E8ECF1; --ink-2:#B4BDC8; --ink-3:#7F8A97;
+    --line:#2C3743; --accent:#F5B400; --accent-ink:#16202B; --navy:#8FB0DC; --navy-soft:#1E2E44;
+    --ok:#6CC08E; --ok-soft:#173423; --warn:#F0B54A; --warn-soft:#3A2B0D; --bad:#F08A76; --bad-soft:#42201A;
+    --z1:#5FAE71; --z2:#D9BF4E; --z3:#D9893B; --z4:#CF5341; --park:#22402A; --zink:#16202B;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);
+    --mast:#0A0F14;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F151C; --surface:#161E27; --surface-2:#1F2933; --ink:#E8ECF1; --ink-2:#B4BDC8; --ink-3:#7F8A97;
+  --line:#2C3743; --accent:#F5B400; --accent-ink:#16202B; --navy:#8FB0DC; --navy-soft:#1E2E44;
+  --ok:#6CC08E; --ok-soft:#173423; --warn:#F0B54A; --warn-soft:#3A2B0D; --bad:#F08A76; --bad-soft:#42201A;
+  --z1:#5FAE71; --z2:#D9BF4E; --z3:#D9893B; --z4:#CF5341; --park:#22402A; --zink:#16202B;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);
+  --mast:#0A0F14;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--navy);text-decoration-thickness:1px;text-underline-offset:2px}
+h1,h2,h3,h4{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;text-wrap:balance;margin:0;line-height:1.15}
+h2{font-size:1.5rem;font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.1rem;font-weight:700}
+h4{font-size:.95rem;font-weight:700}
+p{margin:0}
+.mono,.num{font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.muted{color:var(--ink-2)}
+.small{font-size:.875rem}
+.xs{font-size:.8rem}
+
+/* Header */
+.masthead{background:var(--mast);color:#F1F3F6;padding:22px 20px 0}
+.masthead-inner{max-width:1040px;margin:0 auto}
+.masthead .eyebrow{color:#B4BDC8}
+.masthead h1{font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;color:#fff;margin-top:4px}
+.masthead h1 .dot{display:inline-block;width:.55em;height:.55em;border-radius:50%;background:var(--accent);vertical-align:baseline;margin-left:.15em}
+.flightstrip{display:flex;flex-wrap:wrap;gap:8px 22px;margin:14px 0 18px;font-size:.9rem;color:#D8DEE6}
+.flightstrip b{color:#fff;font-weight:600}
+.flightstrip .num{color:var(--accent)}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;appearance:none;border:0;background:transparent;color:#B4BDC8;font:600 .9rem "Archivo",sans-serif;padding:10px 14px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{color:#fff;border-bottom-color:var(--accent)}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.sticky{position:sticky;top:0;z-index:20;background:var(--mast);box-shadow:0 2px 0 rgba(0,0,0,.15)}
+.sticky .tabs{max-width:1040px;margin:0 auto;padding:0 12px}
+
+/* Layout */
+main{max-width:1040px;margin:0 auto;padding:26px 20px 80px}
+section[data-panel]{display:none}
+section[data-panel].active{display:block}
+.stack{display:grid;gap:22px}
+.grid2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.lead{font-size:1.05rem;max-width:68ch}
+.callout{border-left:4px solid var(--accent);background:var(--surface);padding:14px 18px;border-radius:0 8px 8px 0}
+.callout.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+.callout.bad{border-left-color:var(--bad);background:var(--bad-soft)}
+.callout.ok{border-left-color:var(--ok);background:var(--ok-soft)}
+.callout h4{margin-bottom:4px}
+.pill{display:inline-block;font:600 .72rem "Archivo",sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--surface-2);color:var(--ink-2);vertical-align:middle}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+.pill.navy{background:var(--navy-soft);color:var(--navy)}
+.pill.accent{background:var(--accent);color:var(--accent-ink)}
+ul.clean{list-style:none;margin:0;padding:0}
+ul.bul{margin:6px 0 0 0;padding-left:1.1em}
+ul.bul li{margin:4px 0}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;font-size:.95rem}
+.kv dt{color:var(--ink-3);font-weight:500}
+.kv dd{margin:0}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 .72rem "Archivo",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);background:var(--surface-2);position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right}
+.total{font-size:2rem;font-weight:800;font-family:"Archivo",sans-serif;letter-spacing:-.02em;line-height:1}
+.hr{height:1px;background:var(--line);border:0;margin:6px 0}
+.btn{display:inline-block;font:600 .85rem "Archivo",sans-serif;padding:8px 12px;border-radius:6px;background:var(--navy-soft);color:var(--navy);text-decoration:none;border:1px solid transparent}
+.btn:hover{border-color:var(--navy)}
+
+/* Day cards */
+.day{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.day-head{display:flex;align-items:baseline;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--surface-2);flex-wrap:wrap}
+.day-head .dnum{font:800 1.6rem "Archivo",sans-serif;color:var(--navy);letter-spacing:-.02em;min-width:2.2em}
+.day-head .dnum small{font-size:.7rem;font-weight:700;letter-spacing:.1em;display:block;color:var(--ink-3)}
+.day-head h3{flex:1 1 200px}
+.day-head .theme{color:var(--ink-2);font-size:.9rem}
+.day-body{padding:16px 20px;display:grid;gap:14px}
+.slot{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start}
+.slot .t{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--ink-3);padding-top:3px;white-space:nowrap}
+.slot .what b{font-weight:600}
+.slot .what .sub{color:var(--ink-2);font-size:.9rem;margin-top:2px}
+.slot.alt{border-left:3px dashed var(--line);padding-left:10px;grid-template-columns:66px 1fr}
+.tips{background:var(--surface-2);border-radius:8px;padding:12px 14px;font-size:.9rem}
+.tips b{font-weight:600}
+.walk{color:var(--ink-3);font-size:.8rem}
+
+/* Checklist */
+.check{display:grid;gap:8px}
+.check label{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);cursor:pointer}
+.check input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--navy)}
+.check label:has(input:checked){opacity:.6}
+.check label:has(input:checked) .name{text-decoration:line-through}
+.check .name{font-weight:600}
+.check .meta{color:var(--ink-2);font-size:.875rem;margin-top:2px}
+.check .meta .price{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--ink)}
+.subhead{display:flex;align-items:center;gap:10px;margin:8px 0 4px}
+.subhead h3{flex:1}
+
+/* Map */
+.mapwrap{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:20px;align-items:start}
+@media (max-width:760px){.mapwrap{grid-template-columns:1fr}}
+.map svg{width:100%;height:auto;display:block}
+.legend{display:grid;gap:6px;font-size:.875rem}
+.legend .sw{display:inline-block;width:16px;height:16px;border-radius:3px;vertical-align:-3px;margin-right:8px;border:1px solid rgba(0,0,0,.08)}
+.zones{display:grid;gap:10px}
+.zone{display:grid;grid-template-columns:8px 1fr;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.zone .bar{border-radius:4px}
+.zone h4{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.zone .band{font:600 .72rem "IBM Plex Mono",monospace;color:var(--ink-3)}
+.zone p{font-size:.9rem;color:var(--ink-2);margin-top:3px}
+/* Zone filter chips + table groups */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);font:600 .8rem "Archivo",sans-serif;padding:7px 12px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip .sw{width:12px;height:12px;margin:0;border-radius:3px}
+.chip.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+tr.zh td{background:var(--surface-2);font:700 .78rem "Archivo",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);padding:9px 12px}
+tr.zh .sw{width:12px;height:12px;vertical-align:-1px;margin-right:8px}
+tr[hidden]{display:none}
+#hotelTable td:last-child{white-space:nowrap;font-size:.82rem}
+#hotelTable .links{display:block;margin-top:2px}
+#hotelTable .links a{font-weight:600}
+.foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink-3)}
+@media (prefers-reduced-motion: no-preference){.tab{transition:color .15s,border-color .15s}}
+@media print{.sticky{position:static}section[data-panel]{display:block!important;page-break-before:always}.tabs{display:none}}
+</style>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">Plan de viaje · Carlos + Noemi · borrador v2 (5 sep 2026)</div>
+    <h1>Nueva York con Noemi<span class="dot"></span></h1>
+    <div class="flightstrip">
+      <span><b>Ida</b> lun 21 sep <span class="num">23:45</span> LIM → MIA → JFK <span class="num">11:33</span> (mar 22)</span>
+      <span><b>Vuelta</b> lun 28 sep JFK <span class="num">18:45</span> → MIA → LIM <span class="num">04:10</span> (mar 29)</span>
+      <span><b>AA</b> código en el email · 6 noches · 5 días completos</span>
+    </div>
+  </div>
+</header>
+<div class="sticky">
+  <nav class="tabs" role="tablist" aria-label="Secciones">
+    <button class="tab" role="tab" aria-selected="true" data-tab="resumen">Resumen</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="mapa">Mapa de zonas</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="hotel">Alojamiento</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="dias">Itinerario</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="compras">Compras</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="check">Reservas y checklist</button>
+  </nav>
+</div>
+
+<main>
+
+<!-- ============ RESUMEN ============ -->
+<section data-panel="resumen" class="active">
+  <div class="stack">
+    <p class="lead">Seis noches en Manhattan, del martes 22 al lunes 28 de setiembre. El primer día es de instalación; del miércoles al domingo, turismo completo sin museos; el lunes, mañana ligera y salida al aeropuerto a las 15:00. Este documento es el borrador global: cuando definan alojamiento y qué quiere hacer Noemi con la Estatua, bajamos al detalle.</p>
+
+    <div class="callout warn">
+      <h4>Dos cosas que cambian el plan y que no sabíamos</h4>
+      <p class="small"><b>1. Caen exactamente en la Semana de Alto Nivel de la Asamblea General de la ONU (22–28 sep).</b> Es la semana más cara del año para hoteles en Manhattan (Booking avisa que el 82% de sus alojamientos en NYC no tiene disponibilidad para esas fechas). Consecuencia: el tope de US$300/noche no existe en Manhattan; el piso real para un hotel decente es ~US$355–430 + impuestos (ver Alojamiento). Conviene <b>no</b> alojarse en Midtown East ni programar nada por la zona de la ONU.<br>
+      <b>2. Airbnb de departamento entero está prohibido en NYC para estadías menores a 30 noches</b> (Local Law 18, vigente desde 2023). Solo quedan cuartos con anfitrión presente, aparthoteles con cocina (desde ~US$570/noche) o alquilar un mes entero (desde ~US$3,800–4,500 en su zona, ver Alojamiento). La idea de que Noemi cocine se cumple parcialmente: hotel con refrigeradora + microondas, desayuno incluido, y comida preparada de supermercado.</p>
+    </div>
+
+    <div class="card">
+      <div class="eyebrow">Qué es la "semana de la ONU" y qué significa para ustedes</div>
+      <div class="grid2" style="margin-top:10px">
+        <div>
+          <h4>Qué es</h4>
+          <p class="small muted">La Asamblea General de la ONU sesiona todo el año, pero una semana de setiembre viene el "debate general": hablan los presidentes y jefes de gobierno de los 193 países miembros (Trump, Macron, Lula, el presidente del Perú, etc.), cada uno con su delegación, su seguridad y su prensa. Son decenas de miles de personas con presupuesto oficial ocupando hoteles de Manhattan, y el Servicio Secreto y la policía blindan la zona. Por eso los hoteles agotan y suben en toda la isla, no solo cerca de la ONU. En 2026 el debate va del martes 22 al lunes 28: sus fechas exactas.</p>
+        </div>
+        <div>
+          <h4>Dónde está la sede</h4>
+          <p class="small muted">En la orilla del East River, en la 1ra Avenida entre las calles 42 y 48 (barrio Turtle Bay, Midtown East), a 10 minutos a pie de Grand Central. El edificio alto y plano de vidrio con las banderas.</p>
+        </div>
+        <div>
+          <h4>Qué se cierra de verdad</h4>
+          <p class="small muted">Según el operativo de 2025 (se repite casi igual cada año): la 1ra Av. cerrada de la 42 a la 48; las calles 44 a 48 cerradas entre 1ra y 2da Av.; controles policiales en la 2da Av. de 7:00 a 21:00; cierres intermitentes del FDR Drive y de avenidas enteras cuando pasan las caravanas presidenciales; "Gridlock Alert Days" (tráfico paralizado en todo Midtown). No cierran Grand Central, Times Square, la 5ta Avenida ni ninguna atracción turística.</p>
+        </div>
+        <div>
+          <h4>Qué hacer con eso</h4>
+          <p class="small muted">Dormir lejos de Turtle Bay (FiDi, Midtown West o Upper West), moverse en metro y a pie (no en taxi) mientras estén en Midtown, no programar nada en la 1ra–2da Av. entre la 42 y la 50, y salir con margen el día que visiten Grand Central. Fuera de eso, la ciudad funciona normal y la semana tiene un ambiente particular: banderas, motos de policía y algún presidente pasando.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="eyebrow">Vuelos (confirmación AA · código en el email)</div>
+        <dl class="kv" style="margin-top:10px">
+          <dt>Ida</dt><dd>AA988 LIM 23:45 → MIA 06:38 · AA2341 MIA 08:36 → <b>JFK 11:33</b> (mar 22 sep)</dd>
+          <dt>Vuelta</dt><dd>AA1174 <b>JFK 18:45</b> → MIA 22:02 · AA385 MIA 23:33 → LIM 04:10 (mar 29 sep)</dd>
+          <dt>Pasajeros</dt><dd>Noemi · Carlos · Económica (Y)</dd>
+          <dt>Pago</dt><dd>111,000 millas AAdvantage + US$149.34</dd>
+          <dt>Equipaje</dt><dd>1ra maleta gratis (23 kg / 158 cm lineales) por persona · 2da maleta US$118 ida / US$100 vuelta · mano 56×35×23 cm + artículo personal</dd>
+          <dt>Check-in</dt><dd>App de American, desde 24 h antes</dd>
+        </dl>
+        <p class="xs muted" style="margin-top:10px">Todos los horarios son locales de cada aeropuerto (tomados del email de AA del 3 sep; el evento del calendario los tenía etiquetados como hora Lima).</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Estructura de los días</div>
+        <table style="margin-top:10px">
+          <tr><td class="num mono">Mar 22</td><td>Llegada 11:33 · taxi · check-in · supermercado · barrio</td></tr>
+          <tr><td class="num mono">Mié 23</td><td>Midtown: Grand Central, Bryant Park, 5ta Av., Rockefeller, Top of the Rock, Times Square de noche</td></tr>
+          <tr><td class="num mono">Jue 24</td><td>Lower Manhattan: Wall Street, 9/11, Oculus, Brooklyn Bridge a pie, DUMBO</td></tr>
+          <tr><td class="num mono">Vie 25</td><td>Estatua de la Libertad + Ellis Island (o Staten Island Ferry) · High Line, Chelsea Market, Hudson Yards · crucero al atardecer</td></tr>
+          <tr><td class="num mono">Sáb 26</td><td>Central Park · Upper West Side · San Gennaro (procesión 14:00) · Broadway o Yankees</td></tr>
+          <tr><td class="num mono">Dom 27</td><td>Compras (Apple, Macy's, Strand 15:00) · Village y SoHo · Empire State de noche</td></tr>
+          <tr><td class="num mono">Lun 28</td><td>Flatiron / Eataly · salida al JFK 15:00 · vuelo 18:45</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="eyebrow">Lo que pidió Noemi</div>
+        <ul class="bul small">
+          <li>Times Square → mié 23 de noche (y lo cruzan varias veces más).</li>
+          <li>Wall Street → jue 24 por la mañana.</li>
+          <li>Estatua de la Libertad → vie 25. Si no quiere el bote turístico: <b>Staten Island Ferry</b>, gratis, 25 min por tramo, pasa a ~500 m de la estatua, sin reserva. Es la alternativa que recomiendo si duda.</li>
+          <li>Sin museos: el 9/11 Memorial se ve por fuera (las pozas son gratis y al aire libre); el museo se omite.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Qué sumé y por qué</div>
+        <ul class="bul small">
+          <li><b>Fiesta de San Gennaro</b> (Little Italy): 17–27 sep, este año es el <b>centenario</b>. Gran Procesión el sáb 26 a las 14:00 por Mulberry St. Coincide exacto con el viaje.</li>
+          <li><b>Yankees en casa toda la semana</b> (vs. Rays 22–24, vs. Orioles 25–27). Última semana de temporada regular: opción de noche para el sáb o el dom.</li>
+          <li><b>Miradores</b>: uno de día (Top of the Rock, con el Empire State en la foto) y uno de noche (Empire State). Summit One Vanderbilt y Edge quedan como alternativas.</li>
+          <li><b>Pista de patinaje de Rockefeller</b>: abre recién el 10 de octubre. No la van a ver.</li>
+          <li>Guía turístico: no hace falta. Todo lo del plan se hace solo con Google Maps y metro. A lo sumo un free walking tour en Lower Manhattan (se paga propina).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="eyebrow">Presupuesto de referencia (2 personas, sin compras)</div>
+      <div class="tablewrap" style="margin-top:10px;border:0">
+        <table>
+          <thead><tr><th>Rubro</th><th>Supuesto</th><th class="num">US$</th></tr></thead>
+          <tbody>
+            <tr><td>Alojamiento</td><td>6 noches × US$418–461 + 15.5% impuestos (Staypineapple / Stanford / Fairfield)</td><td class="num mono">2,900–3,200</td></tr>
+            <tr><td>Taxis aeropuerto</td><td>JFK↔Manhattan tarifa fija US$70 + peajes + recargos + propina, ×2</td><td class="num mono">200</td></tr>
+            <tr><td>Metro</td><td>OMNY, tope semanal US$35 por persona (US$3 por viaje, gratis desde el viaje 13)</td><td class="num mono">70</td></tr>
+            <tr><td>Entradas</td><td>Estatua US$26×2 · Top of the Rock ~US$50×2 · Empire State ~US$50×2 · Circle Line US$44×2</td><td class="num mono">340</td></tr>
+            <tr><td>Extras opcionales</td><td>Broadway (TKTS ~US$80–120 c/u) o Yankees (US$40–80 c/u)</td><td class="num mono">160–240</td></tr>
+            <tr><td>Comida</td><td>Desayuno en hotel, almuerzo fuera, cena de supermercado: ~US$70/día los dos</td><td class="num mono">450</td></tr>
+            <tr><td><b>Total aprox.</b></td><td>sin compras</td><td class="num mono"><b>4,100–4,500</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="xs muted" style="margin-top:8px">Efectivo recomendado: US$200–300 por persona en billetes de US$20 o menos. NYC es casi 100% tarjeta (el metro se paga acercando la tarjeta o el celular). El efectivo es para propinas, food trucks y emergencias.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAPA ============ -->
+<section data-panel="mapa">
+  <div class="stack">
+    <h2>Manhattan de Battery Park a Central Park</h2>
+    <p class="lead">Esquema, no a escala. Manhattan se lee por calles numeradas: la calle 1 está abajo (Houston St), Central Park va de la 59 a la 110. Verde = lo más barato que existe esa semana, amarillo = normal, rojo = caro. Los rangos son por noche antes de impuestos, para hoteles con nota ≥ 7, según Booking y Kayak (5 sep). Fuera de esta escala quedan las 4 opciones "baratas de verdad" (YMCA, Leo House, HI NYC, The Jane), que hoy están agotadas: ver Alojamiento.</p>
+    <div class="mapwrap">
+      <div class="map card" style="padding:12px">
+        <svg viewBox="0 0 360 760" role="img" aria-label="Mapa esquemático de Manhattan con zonas y bandas de precio">
+          <defs>
+            <style>
+              .lbl{font:700 11px Archivo,sans-serif;fill:var(--zink)}
+              .lbl2{font:500 9.5px "IBM Plex Sans",sans-serif;fill:var(--zink);opacity:.8}
+              .st{font:500 8.5px "IBM Plex Mono",monospace;fill:var(--ink-3)}
+              .pr{font:700 9px "IBM Plex Mono",monospace;fill:var(--zink)}
+              .pin{font:600 8.5px "IBM Plex Sans",sans-serif;fill:var(--zink)}
+              .water{fill:var(--surface-2)}
+            </style>
+          </defs>
+          <rect class="water" x="0" y="0" width="360" height="760" rx="10"/>
+          <!-- island silhouette: a tilted rounded slab -->
+          <path d="M150 740 C120 700 95 640 92 560 L92 90 C92 50 118 22 158 22 L222 22 C262 22 288 50 288 90 L286 540 C284 640 250 700 215 740 Z" fill="var(--surface)" stroke="var(--line)"/>
+          <!-- zones (y from top = north) -->
+          <!-- Central Park 59-110 -->
+          <rect x="150" y="30" width="80" height="150" fill="var(--park)"/>
+          <text x="190" y="100" text-anchor="middle" class="lbl" style="fill:var(--ink)">Central Park</text>
+          <text x="190" y="114" text-anchor="middle" class="lbl2" style="fill:var(--ink-2);opacity:1">59 → 110</text>
+          <!-- UWS (naranja: 500-650, salvo Night Hotel a 355) -->
+          <path d="M92 90 C92 50 118 30 150 30 L150 180 L92 180 Z" fill="var(--z3)"/>
+          <text x="118" y="95" text-anchor="middle" class="lbl">Upper</text>
+          <text x="118" y="107" text-anchor="middle" class="lbl">West</text>
+          <text x="118" y="122" text-anchor="middle" class="pr">$500–650</text>
+          <!-- UES (rojo) -->
+          <path d="M230 30 C262 30 288 50 288 90 L288 180 L230 180 Z" fill="var(--z4)"/>
+          <text x="262" y="95" text-anchor="middle" class="lbl">Upper</text>
+          <text x="262" y="107" text-anchor="middle" class="lbl">East</text>
+          <text x="262" y="122" text-anchor="middle" class="pr">$600+</text>
+          <!-- Midtown 34-59 -->
+          <rect x="92" y="180" width="98" height="130" fill="var(--z4)"/>
+          <rect x="190" y="180" width="98" height="130" fill="var(--z4)"/>
+          <text x="141" y="215" text-anchor="middle" class="lbl">Midtown West</text>
+          <text x="141" y="228" text-anchor="middle" class="lbl2">Hell's Kitchen · Times Sq</text>
+          <text x="141" y="242" text-anchor="middle" class="pr">$420–800+</text>
+          <text x="239" y="215" text-anchor="middle" class="lbl">Midtown East</text>
+          <text x="239" y="228" text-anchor="middle" class="lbl2">Grand Central · ONU</text>
+          <text x="239" y="242" text-anchor="middle" class="pr">$550+ · cierres</text>
+          <!-- UN security zone: 1ra Av 42-48 -->
+          <rect x="266" y="236" width="22" height="46" fill="var(--zink)" opacity=".45"/>
+          <text x="277" y="294" text-anchor="middle" class="st" style="fill:var(--zink)">ONU</text>
+          <!-- Chelsea / Flatiron / Gramercy 14-34 (naranja) -->
+          <rect x="92" y="310" width="98" height="105" fill="var(--z3)"/>
+          <rect x="190" y="310" width="96" height="105" fill="var(--z3)"/>
+          <text x="141" y="350" text-anchor="middle" class="lbl">Chelsea</text>
+          <text x="141" y="363" text-anchor="middle" class="lbl2">High Line · Hudson Yards</text>
+          <text x="141" y="377" text-anchor="middle" class="pr">$500–650</text>
+          <text x="238" y="350" text-anchor="middle" class="lbl">Flatiron · Koreatown</text>
+          <text x="238" y="363" text-anchor="middle" class="lbl2">Union Sq · Herald Sq</text>
+          <text x="238" y="377" text-anchor="middle" class="pr">$430–550</text>
+          <!-- Village 1-14 -->
+          <rect x="92" y="415" width="98" height="80" fill="var(--z3)"/>
+          <rect x="190" y="415" width="96" height="80" fill="var(--z2)"/>
+          <text x="141" y="450" text-anchor="middle" class="lbl">Greenwich Village</text>
+          <text x="141" y="463" text-anchor="middle" class="lbl2">Washington Sq</text>
+          <text x="141" y="477" text-anchor="middle" class="pr">$550+</text>
+          <text x="238" y="450" text-anchor="middle" class="lbl">East Village</text>
+          <text x="238" y="463" text-anchor="middle" class="lbl2">St. Marks</text>
+          <text x="238" y="477" text-anchor="middle" class="pr">$450–550</text>
+          <!-- SoHo / Little Italy / Chinatown / LES (Houston - Canal) (amarillo) -->
+          <path d="M92 495 L92 560 C93 580 95 600 98 615 L284 615 C285 600 285 580 286 560 L286 495 Z" fill="var(--z2)"/>
+          <text x="140" y="530" text-anchor="middle" class="lbl">SoHo · Tribeca</text>
+          <text x="140" y="544" text-anchor="middle" class="pr">$500–550</text>
+          <text x="238" y="525" text-anchor="middle" class="lbl">Little Italy</text>
+          <text x="238" y="538" text-anchor="middle" class="lbl">Chinatown · LES</text>
+          <text x="238" y="552" text-anchor="middle" class="lbl2">San Gennaro 17–27 sep</text>
+          <text x="238" y="566" text-anchor="middle" class="pr">$450–520</text>
+          <!-- FiDi (below Chambers) (verde) -->
+          <path d="M98 615 C104 660 130 700 150 740 L215 740 C240 705 268 665 284 615 Z" fill="var(--z1)"/>
+          <text x="190" y="660" text-anchor="middle" class="lbl">Financial District</text>
+          <text x="190" y="673" text-anchor="middle" class="lbl2">Wall St · 9/11 · ferris</text>
+          <text x="190" y="687" text-anchor="middle" class="pr">$400–530</text>
+          <!-- streets -->
+          <g class="st">
+            <line x1="60" y1="180" x2="92" y2="180" stroke="var(--ink-3)"/><text x="58" y="184" text-anchor="end">59 St</text>
+            <line x1="60" y1="310" x2="92" y2="310" stroke="var(--ink-3)"/><text x="58" y="314" text-anchor="end">34 St</text>
+            <line x1="60" y1="415" x2="92" y2="415" stroke="var(--ink-3)"/><text x="58" y="419" text-anchor="end">14 St</text>
+            <line x1="60" y1="495" x2="92" y2="495" stroke="var(--ink-3)"/><text x="58" y="499" text-anchor="end">Houston</text>
+            <line x1="62" y1="615" x2="98" y2="615" stroke="var(--ink-3)"/><text x="60" y="619" text-anchor="end">Chambers</text>
+            <text x="190" y="752" text-anchor="middle">Battery Park · ferris a la Estatua y Staten Island</text>
+            <text x="320" y="100" text-anchor="middle" transform="rotate(90 320 100)">East River → Queens / Brooklyn</text>
+            <text x="30" y="600" text-anchor="middle" transform="rotate(-90 30 600)">Hudson River → New Jersey</text>
+          </g>
+          <!-- pins -->
+          <g>
+            <circle cx="141" cy="262" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="148" y="266" class="pin">Times Sq</text>
+            <circle cx="212" cy="262" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="219" y="266" class="pin">Grand Central</text>
+            <circle cx="186" cy="290" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="192" y="294" class="pin">Empire State</text>
+            <circle cx="150" cy="196" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="156" y="200" class="pin">Columbus Circle</text>
+            <circle cx="112" cy="330" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="118" y="334" class="pin">Hudson Yards</text>
+            <circle cx="104" cy="395" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="110" y="399" class="pin">Chelsea Mkt</text>
+            <circle cx="238" cy="430" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="244" y="434" class="pin">Union Sq · Strand</text>
+            <circle cx="150" cy="480" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="156" y="484" class="pin">Washington Sq</text>
+            <circle cx="150" cy="700" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="156" y="704" class="pin">9/11 · Oculus</text>
+            <circle cx="215" cy="712" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="221" y="716" class="pin">Wall St</text>
+            <circle cx="258" cy="640" r="4" fill="var(--accent)" stroke="var(--ink)"/><text x="248" y="632" class="pin">Brooklyn Bridge →</text>
+          </g>
+        </svg>
+      </div>
+      <div class="stack">
+        <div class="legend card">
+          <div class="eyebrow" style="margin-bottom:6px">Bandas de precio · hotel con nota ≥ 7 · 22–28 sep · por noche sin impuestos</div>
+          <div><span class="sw" style="background:var(--z1)"></span><b>Verde · barato</b> ~US$400–530 · Financial District / Seaport (Little Something 403, Fairfield 461, Eurostars 429)</div>
+          <div><span class="sw" style="background:var(--z2)"></span><b>Amarillo · normal</b> ~US$450–550 · Lower East Side, Chinatown, Little Italy, East Village (Days Inn Chinatown 457, Richland 465, Solita 461)</div>
+          <div><span class="sw" style="background:var(--z3)"></span><b>Naranja · caro</b> ~US$500–650 · Chelsea, Flatiron, Village, SoHo, Upper West (excepción: Night Hotel Broadway 355)</div>
+          <div><span class="sw" style="background:var(--z4)"></span><b>Rojo · muy caro</b> ~US$420–800+ · Midtown / Times Square, Upper East, Columbus Circle. Aquí están las gangas relativas (Staypineapple 418, Stanford 428) pero el promedio es el más alto</div>
+          <div><span class="sw" style="background:var(--zink);opacity:.45"></span>Zona de seguridad de la ONU (1ra Av. 42–48 cerrada; controles en 2da Av.)</div>
+          <p class="xs muted" style="margin-top:6px">Con impuestos de hotel NYC suma ~15.5% (14.75% + US$3.50/noche). Los pods cápsula y hostales bajan a US$400 pero no sirven para dos adultos con maletas.</p>
+        </div>
+        <div class="zones">
+          <div class="zone"><div class="bar" style="background:var(--z1)"></div><div><h4>Financial District / Seaport <span class="pill ok">más barato</span></h4><p>La zona con más oferta bajo US$470 esa semana (Little Something 403, Eurostars 429, Fairfield 461 con desayuno). Muy bien conectado (Fulton St, WTC: casi todas las líneas), a pie de Wall St, 9/11, Brooklyn Bridge y los ferris. De noche es tranquilo (barrio de oficinas). Supermercados: Whole Foods (One Wall St), Target (Tribeca). Lejos de la ONU.</p></div></div>
+          <div class="zone"><div class="bar" style="background:var(--z4)"></div><div><h4>Midtown West / Garment District / Koreatown <span class="pill warn">caro, con dos gangas</span></h4><p>Times Square, Broadway, Macy's y Penn Station a pie. En promedio la zona más cara, pero Kayak encontró dos excepciones muy bien puntuadas: <b>Staypineapple</b> (W 36, 8.7, US$418 reservando directo) y <b>Hotel Stanford</b> (W 32, Koreatown, 8.2, US$428 con desayuno). Ruidoso; habitaciones chicas.</p></div></div>
+          <div class="zone"><div class="bar" style="background:var(--z3)"></div><div><h4>Upper West Side <span class="pill">tranquilo</span></h4><p>Residencial, Central Park al lado, Trader Joe's y Zabar's. Casi todo sobre US$550, con una excepción: <b>Night Hotel Broadway</b> (W 94, 7.1, ~US$355), el hotel privado más barato de la lista, básico y algo lejos (metro 1/2/3 en 96 St, 20 min a Times Square). El West Side YMCA (W 63, junto a Central Park, ~US$150) está agotado.</p></div></div>
+          <div class="zone"><div class="bar" style="background:var(--z2)"></div><div><h4>Lower East Side / Chinatown / Little Italy <span class="pill">normal</span></h4><p>Precios entre FiDi y Midtown, más vida de barrio y comida barata, San Gennaro en la puerta. Menos conexiones de metro (F, J/Z, B/D). Days Inn Chinatown 457 con desayuno, Solita Soho 461, Hotel Richland LES (8.5) 465, Holiday Inn LES 447.</p></div></div>
+          <div class="zone"><div class="bar" style="background:var(--zink);opacity:.5"></div><div><h4>Midtown East / Turtle Bay <span class="pill bad">evitar esa semana</span></h4><p>Sede de la ONU (1ra Av. entre 42 y 48). No está "cerrada" del todo: la 1ra Av. se cierra de la 42 a la 48, las calles 44–48 entre 1ra y 2da quedan bloqueadas, hay controles policiales en la 2da Av. y caravanas que cortan avenidas sin aviso. Se puede caminar y el metro funciona, pero los hoteles de la zona son más caros y moverse en taxi es lento. Pod 51 (E 51) sale relativamente barato por eso.</p></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      <h4>Tus lugares guardados de Google Maps (viaje 2019)</h4>
+      <p class="small">No puedo leerlos directo. Dos caminos: (a) <b>Google Takeout</b> → selecciona solo "Maps (tus sitios)" → te da un archivo <span class="mono">Saved Places.json</span>; me lo pasas y los cruzo con este plan; o (b) en la app de Maps abre la lista, "Compartir", y me pegas el enlace público. Mientras tanto, cada punto del itinerario tiene su enlace a Google Maps.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ALOJAMIENTO ============ -->
+<section data-panel="hotel">
+  <div class="stack">
+    <h2>Alojamiento: qué hay realmente para el 22–28 de setiembre</h2>
+    <p class="lead">Precios consultados el 5 de setiembre en <b>Booking.com</b> y en <b>Kayak</b> (que compara 55 portales: Hotels.com, Expedia, Priceline, Agoda, Prestigia, la web de cada hotel) para 2 adultos, 6 noches, solo Manhattan, nota ≥ 7. Las cifras son el total de la estadía dividido entre 6, <b>antes de ~15.5% de impuestos</b>; cuando Kayak mostró varios portales, tomé el más barato. Cambian a diario: lo que sirve es el orden de magnitud y el orden entre opciones.</p>
+
+    <div class="callout bad">
+      <h4>US$300 por noche no existe en Manhattan esa semana (lo busqué en todos lados)</h4>
+      <p class="small">Booking, Kayak y las webs directas coinciden: bajo US$350 solo quedan cápsulas compartidas, hostales con baño compartido y hoteles con nota &lt; 6. Las cuatro opciones que sí cuestan US$150–250 en Manhattan (West Side YMCA, Leo House, HI NYC, The Jane) están <b>agotadas</b> para esas fechas al 5 de setiembre. El piso real para un hotel privado aceptable es <b>US$355</b> (Night Hotel Broadway, básico) y las mejores relaciones calidad-precio están en <b>US$403–430</b>. Recomiendo reservar <b>ya, con cancelación gratis</b>, y volver a mirar cada pocos días.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card" style="border-color:var(--ok)">
+        <div class="eyebrow">Mis tres candidatos (en este orden)</div>
+        <h3 style="margin-top:6px">1. Staypineapple, Midtown New York <span class="pill ok">mejor nota</span></h3>
+        <p class="small muted">337 W 36th St (Garment District / Hell's Kitchen) · Kayak 8.7 (1,521 opiniones) · <b>US$418/noche reservando directo</b> → ≈ US$2,900 con impuestos. A 10 min a pie de Times Square, Macy's y Penn Station. Habitaciones chicas pero muy bien cuidadas. Sin desayuno.</p>
+        <a class="btn" style="margin-top:8px" href="https://www.staypineapple.com/midtown-new-york" target="_blank" rel="noopener">Web directa</a>
+        <hr class="hr" style="margin:12px 0">
+        <h3>2. Hotel Stanford <span class="pill navy">desayuno incluido</span></h3>
+        <p class="small muted">43 W 32nd St (Koreatown, a 2 cuadras del Empire State) · Kayak 8.2 (4,568) · <b>US$428/noche</b> → ≈ US$2,970 con impuestos. Desayuno gratis resuelve una comida diaria; habitaciones más amplias que las de Staypineapple. Calle 32 llena de restaurantes coreanos abiertos hasta tarde.</p>
+        <a class="btn" style="margin-top:8px" href="https://www.kayak.com/hotels/New-York,NY-c15830/2026-09-22/2026-09-28/2adults" target="_blank" rel="noopener">Comparar en Kayak</a>
+        <hr class="hr" style="margin:12px 0">
+        <h3>3. Fairfield Inn &amp; Suites Financial District <span class="pill navy">desayuno incluido</span></h3>
+        <p class="small muted">161 Front St (Seaport / FiDi) · 8.0 (5,636) · <b>US$461/noche</b> → ≈ US$3,200 con impuestos. La opción "segura" de Marriott: desayuno, refrigeradora y microondas, Whole Foods a 8 min, barrio tranquilo de noche, a pie de Wall St y los ferris. Cancelación gratis.</p>
+        <a class="btn" style="margin-top:8px" href="https://www.marriott.com/en-us/hotels/nycfd-fairfield-inn-and-suites-new-york-manhattan-financial-district/overview/" target="_blank" rel="noopener">Web directa Marriott</a>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Otras que vale la pena mirar</div>
+        <h4 style="margin-top:6px">Little Something Hotel · FiDi · US$403–428</h4>
+        <p class="small muted">5 Platt St · 8.3 pero solo 34–55 opiniones (hotel nuevo, 172 habitaciones). Boutique, buen precio; el riesgo es la poca historia.</p>
+        <h4 style="margin-top:10px">Night Hotel Broadway · Upper West (W 94) · US$355</h4>
+        <p class="small muted">7.1 (3,047). El privado más barato con baño propio. Antiguo Days Inn: básico, limpio, algo lejos (20 min en metro a Times Square, express 1/2/3 en la 96). Si el presupuesto manda, es esta.</p>
+        <h4 style="margin-top:10px">Da Vinci Hotel · Columbus Circle (W 56) · US$392–412</h4>
+        <p class="small muted">7.8–7.9 (2,740). Básico, habitaciones chicas, ubicación excelente (Central Park a 3 cuadras).</p>
+        <h4 style="margin-top:10px">Hotel Indigo FiDi · US$513–521</h4>
+        <p class="small muted">8.9–9.0, la mejor nota de todo el listado. Si quieren "mejor hotel" en vez de "más barato".</p>
+        <hr class="hr" style="margin:12px 0">
+        <div class="eyebrow">Con cocina (aparthoteles)</div>
+        <p class="small muted" style="margin-top:6px">17John (FiDi) US$595 · Nester Finn / Sonder 116 John (FiDi, 8.8) US$500–611 · TownePlace Suites Times Square (cocina + desayuno) US$612 · Residence Inn FiDi (cocina + desayuno) US$528–621 · Candlewood Suites TSQ US$623 · Homewood Suites TSQ South US$723. Diferencia vs. un hotel de US$420: ~US$700–1,200 por 6 noches; cocinar no ahorra eso.</p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="eyebrow">Las 4 opciones "baratas de verdad" (todas agotadas hoy: poner alerta)</div>
+        <div class="tablewrap" style="border:0;margin-top:8px">
+          <table>
+            <thead><tr><th>Lugar</th><th>Dónde</th><th class="num">US$/noche</th><th>Estado 5 sep</th></tr></thead>
+            <tbody>
+              <tr><td><a href="https://ymcanyc.org/locations/west-side-ymca/residence-program" target="_blank" rel="noopener">West Side YMCA</a></td><td>5 W 63rd St, frente a Central Park</td><td class="num mono">~145–200</td><td>Agotado en su web (todas las categorías, incl. doble con baño privado)</td></tr>
+              <tr><td><a href="https://www.leohousenyc.com/" target="_blank" rel="noopener">Leo House</a></td><td>332 W 23rd St, Chelsea (casa de huéspedes católica, desayuno incl.)</td><td class="num mono">~145–200</td><td>Sin disponibilidad en Booking; consultar por teléfono (+1 212-929-1010)</td></tr>
+              <tr><td><a href="https://www.hiusa.org/find-hostels/new-york/new-york-891-amsterdam-ave" target="_blank" rel="noopener">HI New York City</a> (habitación privada)</td><td>891 Amsterdam Ave y 103 St, Upper West</td><td class="num mono">~200–280</td><td>Sin disponibilidad en Booking; revisar hiusa.org</td></tr>
+              <tr><td><a href="https://www.thejanenyc.com/" target="_blank" rel="noopener">The Jane Hotel</a> (cabina Captain's con baño)</td><td>113 Jane St, West Village</td><td class="num mono">~250–350</td><td>No aparece en Booking/Kayak para esas fechas; revisar web directa</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="xs muted" style="margin-top:8px">Cómo usarlas: reservar hoy un hotel con cancelación gratis como respaldo y revisar estas cuatro webs el 12 y el 19 de setiembre (las cancelaciones se liberan 1–2 semanas antes). Si alguna abre, se cancela el hotel. Son cuartos chicos y sencillos, pero limpios y en zonas excelentes.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Airbnb por 30 noches (legal) — lo revisé y no conviene</div>
+        <p class="small muted" style="margin-top:6px">Airbnb solo permite departamentos enteros en NYC a partir de 30 noches, así que probé pagar un mes (22 sep – 22 oct) y usar 6 noches. Resultado, con todas las tarifas incluidas, dentro de su zona (FiDi a la 110): estudios en Upper East Side <b>US$4,000–4,470</b>; 1 dormitorio cerca de Central Park US$4,000–4,100; East Village US$4,390; "Oasis clásico 1 dormitorio Manhattan" US$3,770. Lo único bajo US$3,300 en Manhattan estaba en Harlem (US$3,150–3,220, sin reseñas) o fuera de la isla (Brooklyn, Astoria, Jersey City US$2,000–3,000).</p>
+        <p class="small muted" style="margin-top:8px"><b>Conclusión:</b> el mes entero cuesta US$600–1,300 más que el hotel de US$2,900–3,200, sin limpieza diaria, sin recepción para las maletas el primer y el último día, y con el riesgo de un anfitrión nuevo. Solo tendría sentido si aparece uno en Midtown/UWS/FiDi a ≤US$3,300 con buenas reseñas; puedo repetir la búsqueda cuando quieras.</p>
+        <a class="btn" style="margin-top:8px" href="https://www.airbnb.com/s/Manhattan--New-York--NY--United-States/homes?checkin=2026-09-22&checkout=2026-10-22&adults=2&room_types%5B%5D=Entire%20home%2Fapt&price_max=3500" target="_blank" rel="noopener">Repetir búsqueda en Airbnb</a>
+      </div>
+    </div>
+
+    <div class="subhead"><h3>Tabla comparativa por zona</h3><span class="pill">toca una zona para filtrar</span></div>
+    <div class="chips" id="zoneChips">
+      <button class="chip active" data-zone="all">Todas</button>
+      <button class="chip" data-zone="fidi"><span class="sw" style="background:var(--z1)"></span>FiDi / Seaport</button>
+      <button class="chip" data-zone="les"><span class="sw" style="background:var(--z2)"></span>LES / Chinatown / SoHo</button>
+      <button class="chip" data-zone="mtw"><span class="sw" style="background:var(--z4)"></span>Midtown West / Times Sq</button>
+      <button class="chip" data-zone="mid"><span class="sw" style="background:var(--z4)"></span>Herald Sq / Koreatown / 5ta</button>
+      <button class="chip" data-zone="uws"><span class="sw" style="background:var(--z3)"></span>Upper West / Columbus Circle</button>
+      <button class="chip" data-zone="mte"><span class="sw" style="background:var(--zink);opacity:.5"></span>Midtown East (ONU)</button>
+      <button class="chip" data-zone="kit">Con cocina</button>
+    </div>
+    <div class="tablewrap">
+      <table id="hotelTable">
+        <thead><tr><th>Hotel</th><th>Dirección</th><th class="num">Nota</th><th class="num">6 noches</th><th class="num">Por noche</th><th>Notas</th><th>Fuente</th></tr></thead>
+        <tbody>
+          <tr class="zh" data-zone="fidi"><td colspan="7"><span class="sw" style="background:var(--z1)"></span>Financial District / Seaport — verde, lo más barato</td></tr>
+          <tr data-zone="fidi" data-direct="https://www.littlesomethingnyc.com/" data-kayak="1073727927"><td>Little Something Hotel</td><td>5 Platt St</td><td class="num">8.3</td><td class="num mono">2,416</td><td class="num mono">403</td><td>Nuevo (34–55 opiniones). Hasta 2,570 según portal</td><td>Kayak</td></tr>
+          <tr data-zone="fidi" data-direct="https://www.eurostarshotels.com/eurostars-wall-street.html" data-kayak="44759"><td>Eurostars Wall Street</td><td>129 Front St</td><td class="num">7.9–8.1</td><td class="num mono">2,576</td><td class="num mono">429</td><td>Reservando directo; en Booking 3,203</td><td>Kayak</td></tr>
+          <tr data-zone="fidi" style="background:var(--ok-soft)" data-direct="https://www.marriott.com/en-us/hotels/nycfd-fairfield-inn-and-suites-new-york-manhattan-financial-district/overview/" data-kayak="727076"><td><b>Fairfield Inn &amp; Suites FiDi</b></td><td>161 Front St</td><td class="num">8.0</td><td class="num mono">2,764</td><td class="num mono">461</td><td>Desayuno incl., cancelación gratis</td><td>Booking = Kayak</td></tr>
+          <tr data-zone="fidi" data-kayak="1071760788"><td>Tribeca Hotel FiDi</td><td>Financial District</td><td class="num">7.2</td><td class="num mono">2,773</td><td class="num mono">462</td><td>Suite king; nota baja</td><td>Kayak</td></tr>
+          <tr data-zone="fidi" data-kayak="2926406"><td>Hilton Garden Inn FiDi</td><td>6 Water St</td><td class="num">8.4</td><td class="num mono">2,822</td><td class="num mono">470</td><td></td><td>Kayak</td></tr>
+          <tr data-zone="fidi" data-kayak="2276139"><td>Aloft Manhattan Downtown</td><td>49 Ann St</td><td class="num">7.9</td><td class="num mono">2,914</td><td class="num mono">486</td><td>Cancelación gratis, paga en hotel</td><td>Booking</td></tr>
+          <tr data-zone="fidi" data-kayak="341101"><td>DoubleTree Downtown</td><td>8 Stone St</td><td class="num">7.7</td><td class="num mono">2,916</td><td class="num mono">486</td><td></td><td>Kayak</td></tr>
+          <tr data-zone="fidi" data-kayak="4962518"><td>Courtyard Downtown FiDi</td><td>133 Greenwich St</td><td class="num">7.9</td><td class="num mono">3,026</td><td class="num mono">504</td><td>2 camas dobles</td><td>Booking = Kayak</td></tr>
+          <tr data-zone="fidi" data-direct="https://www.ihg.com/hotelindigo/hotels/us/en/new-york/nycfi/hoteldetail" data-kayak="1070331854"><td>Hotel Indigo FiDi</td><td>8 Stone St</td><td class="num">8.9–9.0</td><td class="num mono">3,080</td><td class="num mono">513</td><td>La mejor nota del listado; sin desayuno</td><td>Kayak</td></tr>
+          <tr data-zone="fidi" data-kayak="2504777"><td>Four Points Downtown</td><td>6 Platt St</td><td class="num">8.2</td><td class="num mono">3,156</td><td class="num mono">526</td><td>Cancelación gratis</td><td>Kayak</td></tr>
+
+          <tr class="zh" data-zone="les"><td colspan="7"><span class="sw" style="background:var(--z2)"></span>Lower East Side / Chinatown / Little Italy / SoHo — amarillo, normal</td></tr>
+          <tr data-zone="les" data-direct="https://www.ihg.com/holidayinn/hotels/us/en/new-york/nycls/hoteldetail" data-kayak="448398"><td>Holiday Inn Lower East Side</td><td>150 Delancey St</td><td class="num">7.7</td><td class="num mono">2,680</td><td class="num mono">447</td><td>Directo con IHG Rewards; Booking 3,062</td><td>Kayak</td></tr>
+          <tr data-zone="les" data-kayak="1070825839"><td>Days Inn Chinatown</td><td>Bowery (Chinatown)</td><td class="num">7.4</td><td class="num mono">2,739</td><td class="num mono">457</td><td>Desayuno incl., cancelación gratis. 2 estrellas</td><td>Kayak</td></tr>
+          <tr data-zone="les" data-kayak="64823"><td>Solita Soho Hotel</td><td>159 Grand St (Little Italy)</td><td class="num">7.8</td><td class="num mono">2,765</td><td class="num mono">461</td><td>2 camas dobles; en plena San Gennaro (ruido hasta medianoche)</td><td>Kayak</td></tr>
+          <tr data-zone="les" data-kayak="472472"><td>Hotel Richland LES</td><td>Lower East Side</td><td class="num">8.5</td><td class="num mono">2,789</td><td class="num mono">465</td><td>Cama doble + individual; 2 estrellas con muy buena nota</td><td>Kayak</td></tr>
+          <tr data-zone="les" data-kayak="4568234"><td>Soho 54</td><td>54 Watts St (Hudson Sq)</td><td class="num">7.7</td><td class="num mono">3,034</td><td class="num mono">506</td><td>Cancelación gratis</td><td>Kayak</td></tr>
+
+          <tr class="zh" data-zone="mtw"><td colspan="7"><span class="sw" style="background:var(--z4)"></span>Midtown West / Times Square / Hell's Kitchen — rojo, caro (con dos excepciones)</td></tr>
+          <tr data-zone="mtw" data-direct="https://www.thepodhotel.com/pod-times-square" data-kayak="2961389"><td>Pod Times Square</td><td>400 W 42nd St</td><td class="num">8.6</td><td class="num mono">2,283</td><td class="num mono">381</td><td>Cápsula con literas, muy chica. No para dos adultos con maletas. Booking 2,475</td><td>Kayak (private deal)</td></tr>
+          <tr data-zone="mtw" style="background:var(--ok-soft)" data-direct="https://www.staypineapple.com/midtown-new-york" data-kayak="4242088"><td><b>Staypineapple, Midtown</b></td><td>337 W 36th St</td><td class="num">8.7</td><td class="num mono">2,509</td><td class="num mono">418</td><td>Reservando directo. Habitaciones chicas, muy bien puntuado</td><td>Kayak → web</td></tr>
+          <tr data-zone="mtw" data-kayak="32848"><td>The Belvedere Hotel</td><td>319 W 48th St</td><td class="num">8.0</td><td class="num mono">2,731</td><td class="num mono">455</td><td>A 2 cuadras de Times Square</td><td>Kayak</td></tr>
+          <tr data-zone="mtw" data-direct="https://www.yotel.com/en/hotels/yotel-new-york" data-kayak="607896"><td>YOTEL New York</td><td>570 10th Ave (W 42)</td><td class="num">7.4</td><td class="num mono">2,760</td><td class="num mono">460</td><td>Directo con 6% dto.; cabinas modernas y chicas</td><td>Kayak</td></tr>
+          <tr data-zone="mtw" data-kayak="32957"><td>Ameritania at Times Square</td><td>230 W 54th St</td><td class="num">8.0</td><td class="num mono">2,789</td><td class="num mono">465</td><td></td><td>Kayak</td></tr>
+          <tr data-zone="mtw" data-kayak="196896"><td>Holiday Inn Express Times Square</td><td>343 W 39th St</td><td class="num">7.1</td><td class="num mono">2,908</td><td class="num mono">485</td><td>Desayuno incl.</td><td>Kayak</td></tr>
+          <tr data-zone="mtw" data-kayak="3756386"><td>Aliz Hotel Times Square</td><td>310 W 40th St</td><td class="num">8.1</td><td class="num mono">2,923</td><td class="num mono">487</td><td>Cancelación gratis</td><td>Kayak</td></tr>
+          <tr data-zone="mtw" data-kayak="443976"><td>voco Times Square South</td><td>343 W 36th St</td><td class="num">8.2</td><td class="num mono">2,925</td><td class="num mono">488</td><td>Cancelación gratis; Booking 3,061</td><td>Kayak</td></tr>
+          <tr data-zone="mtw"><td>Element Times Square West</td><td>311 W 39th St</td><td class="num">8.1</td><td class="num mono">2,970</td><td class="num mono">495</td><td>Desayuno incl.; habitaciones con kitchenette</td><td>Kayak</td></tr>
+          <tr data-zone="mtw" data-direct="https://www.edisonhotelnyc.com/" data-kayak="31583"><td>Hotel Edison Times Square</td><td>228 W 47th St</td><td class="num">8.0</td><td class="num mono">2,993</td><td class="num mono">499</td><td>Desayuno incl., cancelación gratis; clásico art déco</td><td>Kayak</td></tr>
+          <tr data-zone="mtw" data-kayak="194432"><td>Hampton Inn Times Square South</td><td>337 W 39th St</td><td class="num">7.7–7.8</td><td class="num mono">3,083</td><td class="num mono">514</td><td>Desayuno incl.</td><td>Kayak</td></tr>
+          <tr data-zone="mtw" data-kayak="1070714341"><td>Motto by Hilton Times Square</td><td>W 46th St</td><td class="num">8.4</td><td class="num mono">3,126</td><td class="num mono">521</td><td>Cancelación gratis</td><td>Kayak</td></tr>
+          <tr data-zone="mtw" data-kayak="35660"><td>Club Quarters Times Square</td><td>40 W 45th St</td><td class="num">8.6</td><td class="num mono">3,154</td><td class="num mono">526</td><td></td><td>Kayak</td></tr>
+
+          <tr class="zh" data-zone="mid"><td colspan="7"><span class="sw" style="background:var(--z4)"></span>Herald Square / Koreatown / 5ta Avenida (calles 28–40) — rojo, caro (con una excepción)</td></tr>
+          <tr data-zone="mid" style="background:var(--ok-soft)" data-kayak="33755"><td><b>Hotel Stanford</b></td><td>43 W 32nd St (Koreatown)</td><td class="num">8.2</td><td class="num mono">2,568</td><td class="num mono">428</td><td>Desayuno incl. A 2 cuadras del Empire State y de Macy's</td><td>Kayak</td></tr>
+          <tr data-zone="mid" data-kayak="741404"><td>Hotel 32 32</td><td>32 E 32nd St</td><td class="num">7.6</td><td class="num mono">2,657</td><td class="num mono">443</td><td>Reservando directo</td><td>Kayak</td></tr>
+          <tr data-zone="mid" data-direct="https://www.thepodhotel.com/pod-39" data-kayak="675859"><td>Pod 39</td><td>145 E 39th St (Murray Hill)</td><td class="num">8.5</td><td class="num mono">2,682</td><td class="num mono">447</td><td>Cápsula con literas; cerca del borde de la zona ONU</td><td>Kayak</td></tr>
+          <tr data-zone="mid" data-kayak="168455"><td>U Hotel Fifth Avenue</td><td>21 W 38th St</td><td class="num">8.0</td><td class="num mono">2,850</td><td class="num mono">475</td><td>Cancelación gratis</td><td>Kayak</td></tr>
+          <tr data-zone="mid" data-kayak="697641"><td>Best Western Premier Herald Square</td><td>22 W 32nd St</td><td class="num">8.2</td><td class="num mono">2,916</td><td class="num mono">486</td><td></td><td>Kayak</td></tr>
+          <tr data-zone="mid" data-kayak="5544612"><td>Little Charlie Hotel</td><td>W 36th St</td><td class="num">8.2</td><td class="num mono">3,006</td><td class="num mono">501</td><td>Desayuno incl.</td><td>Kayak</td></tr>
+          <tr data-zone="mid" data-kayak="311229"><td>Fairfield Inn Fifth Avenue</td><td>W 40th St</td><td class="num">8.1</td><td class="num mono">3,094</td><td class="num mono">516</td><td>Desayuno incl.</td><td>Kayak</td></tr>
+
+          <tr class="zh" data-zone="uws"><td colspan="7"><span class="sw" style="background:var(--z3)"></span>Upper West Side / Columbus Circle — naranja (con una excepción muy barata)</td></tr>
+          <tr data-zone="uws" style="background:var(--ok-soft)" data-kayak="1070315779"><td><b>Night Hotel Broadway</b></td><td>215 W 94th St</td><td class="num">7.1–7.2</td><td class="num mono">2,117</td><td class="num mono">353</td><td>El privado más barato. Básico (ex Days Inn). Metro 1/2/3 en 96 St. Cancelación gratis. Booking 2,655</td><td>Kayak</td></tr>
+          <tr data-zone="uws" data-direct="https://www.davincihotelnyc.com/" data-kayak="35074"><td>Da Vinci Hotel</td><td>244 W 56th St</td><td class="num">7.8–7.9</td><td class="num mono">2,354</td><td class="num mono">392</td><td>Básico, cancelación gratis; Kayak 2,444–2,473</td><td>Booking</td></tr>
+          <tr data-zone="uws" data-direct="https://app.thebookingbutton.com/properties/westsidedirect" data-kayak="64846"><td>West Side YMCA</td><td>5 W 63rd St</td><td class="num">6.7</td><td class="num mono">—</td><td class="num mono">~150</td><td>Agotado (todas las categorías) al 5 sep</td><td>Web directa</td></tr>
+          <tr data-zone="uws" data-direct="https://www.hiusa.org/find-hostels/new-york/new-york-891-amsterdam-ave" data-kayak="98607"><td>HI New York City (privada)</td><td>891 Amsterdam Ave</td><td class="num">8.7</td><td class="num mono">—</td><td class="num mono">~200–280</td><td>Sin disponibilidad al 5 sep</td><td>Booking</td></tr>
+
+          <tr class="zh" data-zone="mte"><td colspan="7"><span class="sw" style="background:var(--zink);opacity:.5"></span>Midtown East / Turtle Bay — evitar esa semana (ONU)</td></tr>
+          <tr data-zone="mte" data-direct="https://www.thepodhotel.com/pod-51" data-kayak="33571"><td>Pod 51</td><td>230 E 51st St</td><td class="num">8.2</td><td class="num mono">2,313</td><td class="num mono">386</td><td>Baño compartido. Barato porque está en la zona de la ONU. Descartar</td><td>Kayak</td></tr>
+
+          <tr class="zh" data-zone="kit"><td colspan="7">Con cocina (estudios / aparthoteles)</td></tr>
+          <tr data-zone="kit" data-direct="https://www.sonder.com/" data-kayak="1073833098"><td>Nester Finn (Sonder 116 John)</td><td>116 John St (FiDi)</td><td class="num">8.7–8.8</td><td class="num mono">2,999</td><td class="num mono">500</td><td>Estudio 60 m² con cocina, cancelación gratis. Booking 3,665</td><td>Kayak</td></tr>
+          <tr data-zone="kit" data-direct="https://www.marriott.com/en-us/hotels/nycwd-residence-inn-new-york-downtown-manhattan-financial-district/overview/" data-kayak="4962529"><td>Residence Inn Downtown FiDi</td><td>170 Broadway</td><td class="num">8.1</td><td class="num mono">3,165</td><td class="num mono">528</td><td>Cocina + desayuno, cancelación gratis. Booking 3,724</td><td>Kayak</td></tr>
+          <tr data-zone="kit"><td>17John</td><td>17 John St (FiDi)</td><td class="num">8.5</td><td class="num mono">3,568</td><td class="num mono">595</td><td>Estudio con cocina, 32 m²</td><td>Booking</td></tr>
+          <tr data-zone="kit" data-direct="https://www.marriott.com/en-us/hotels/nyctm-towneplace-suites-new-york-manhattan-times-square/overview/" data-kayak="3724092"><td>TownePlace Suites Times Square</td><td>324 W 44th St</td><td class="num">8.3</td><td class="num mono">3,670</td><td class="num mono">612</td><td>Cocina + desayuno incl.</td><td>Booking</td></tr>
+          <tr data-zone="kit" data-kayak="190951"><td>Candlewood Suites Times Square</td><td>339 W 39th St</td><td class="num">8.4</td><td class="num mono">3,738</td><td class="num mono">623</td><td>Estudio con cocina</td><td>Booking</td></tr>
+          <tr data-zone="kit"><td>Homewood Suites TSQ South</td><td>312 W 37th St</td><td class="num">8.6</td><td class="num mono">4,335</td><td class="num mono">723</td><td>Estudio con cocina y balcón</td><td>Booking</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="xs muted">Enlaces por hotel: <b>Booking</b> abre la búsqueda de ese hotel con las fechas cargadas; <b>Kayak</b> abre la ficha del hotel en Kayak con las fechas (comparación de portales; en 3 hoteles sin ficha abre la lista filtrada de Manhattan); <b>Google</b> abre la comparación de precios de Google Hotels (poner las fechas a mano); <b>Directo</b>, la web oficial. Si Kayak muestra un "Security Check", es normal la primera vez: marcar "Continue".<br>Fuentes: Booking.com y Kayak.com, consultas del 5 sep 2026, 2 adultos, 22–28 sep, USD, precios antes de impuestos (~15.5%). "Kayak" = el portal más barato de los que Kayak compara; algunos exigen iniciar sesión ("private deal") o reservar directo con el hotel. Los "departamentos enteros" que aparecen en Booking/Airbnb en Manhattan a menos de 30 noches son sospechosos: si no tienen número de registro de la ciudad, la plataforma puede cancelar la reserva.</p>
+
+    <div class="callout">
+      <h4>Cómo reservar</h4>
+      <p class="small">1) Reservar hoy la opción elegida con <b>cancelación gratis</b> (la web del hotel suele igualar o mejorar el precio y da puntos; Kayak muestra en qué portal está más barato). 2) Pedir en "solicitudes especiales": habitación con 2 camas, piso alto, refrigeradora y microondas. 3) Revisar precios y las 4 opciones baratas el 12 y el 19 de setiembre; si algo baja o se libera, cancelar y volver a reservar. 4) Truco adicional: Priceline "Express Deals" y Hotwire "Hot Rates" venden hoteles de 3–4 estrellas sin decir el nombre hasta pagar, 20–40% más baratos, pero sin cancelación: solo como último recurso 2–3 días antes. 5) Llegan a las 11:33 y el check-in suele ser 15:00–16:00: pedir early check-in; si no, dejan maletas en recepción y van al supermercado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ITINERARIO ============ -->
+<section data-panel="dias">
+  <div class="stack">
+    <h2>Itinerario día por día</h2>
+    <p class="lead">Armado asumiendo hotel en FiDi; si eligen Midtown, los días se mantienen y solo cambian los traslados. Cada día tiene una zona para no cruzar la isla de ida y vuelta. Horas de sol: amanece ~06:45, atardece ~18:50. Clima esperado: máximas 21–24 °C, mínimas 13–15 °C, 25% de probabilidad de lluvia por día.</p>
+
+    <!-- DAY 1 -->
+    <div class="day">
+      <div class="day-head"><div class="dnum"><small>Martes</small>22</div><h3>Llegada e instalación</h3><span class="theme">Sin turismo formal. Objetivo: dormir bien esa noche.</span></div>
+      <div class="day-body">
+        <div class="slot"><div class="t">11:33</div><div class="what"><b>Aterrizan en JFK (Terminal 8, American).</b><div class="sub">Migración + maletas: calcular 60–90 min. Salida ~13:00.</div></div></div>
+        <div class="slot"><div class="t">13:00</div><div class="what"><b>Taxi amarillo oficial a Manhattan.</b><div class="sub">Fila de taxis señalizada afuera de la terminal; ignorar a quien ofrezca "taxi" adentro. Tarifa fija US$70 + peajes + recargos (~US$5) + propina 15–20% ≈ <b>US$95–105</b>. Se paga con tarjeta en el taxi. 45–75 min a FiDi. Uber/Lyft similar o más caro a esa hora.</div></div></div>
+        <div class="slot"><div class="t">14:15</div><div class="what"><b>Hotel: check-in o dejar maletas.</b><div class="sub">Si la habitación no está lista (lo normal antes de las 15:00), guardan maletas y salen a caminar.</div></div></div>
+        <div class="slot"><div class="t">15:00</div><div class="what"><b>Supermercado: <a href="https://www.google.com/maps/search/?api=1&query=Whole+Foods+Market+One+Wall+Street+New+York" target="_blank" rel="noopener">Whole Foods One Wall Street</a>.</b><div class="sub">Frutas, yogur, pan, café, agua, comida preparada por peso (hot bar y ensaladas) para la cena. Bolsas: llevar una reutilizable o comprar (US$0.05 c/u). Alternativa más barata: <a href="https://www.google.com/maps/search/?api=1&query=Target+Tribeca+255+Greenwich+St" target="_blank" rel="noopener">Target Tribeca</a>.</div></div></div>
+        <div class="slot"><div class="t">16:30</div><div class="what"><b>Primer viaje en metro, corto, para aprender.</b><div class="sub">Estación Fulton St. Cada uno acerca su tarjeta de crédito contactless (o el celular con Apple/Google Pay) al lector OMNY: US$3 por viaje, y a partir del viaje 13 de la semana (lun–dom) es gratis. Siempre la <b>misma</b> tarjeta para que sume el tope. Ida y vuelta a Brooklyn Bridge–City Hall (1 parada) o simplemente reconocer la estación.</div></div></div>
+        <div class="slot"><div class="t">17:30</div><div class="what"><b>Paseo suave: <a href="https://www.google.com/maps/search/?api=1&query=Stone+Street+New+York" target="_blank" rel="noopener">Stone Street</a> → <a href="https://www.google.com/maps/search/?api=1&query=The+Battery+New+York" target="_blank" rel="noopener">Battery Park</a> al atardecer.</b><div class="sub">Primera vista de la Estatua desde la orilla (gratis). Noemi decide ahí si quiere ir en bote el viernes.</div></div></div>
+        <div class="slot"><div class="t">19:00</div><div class="what"><b>Cena en el hotel con lo del supermercado. Dormir temprano.</b><div class="sub">Llevan 20 horas de viaje. Poner alarma para el miércoles a las 08:00.</div></div></div>
+        <div class="tips"><b>Hoy también:</b> avisar a los bancos que están en EE.UU. (si no lo hicieron), activar los GB internacionales de Movistar y Claro al aterrizar, descargar el mapa offline de Manhattan en Google Maps, y comprar las entradas de Top of the Rock para mañana (ver Reservas).</div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day">
+      <div class="day-head"><div class="dnum"><small>Miércoles</small>23</div><h3>Midtown clásico</h3><span class="theme">Grand Central → Bryant Park → 5ta Av. → Rockefeller → Top of the Rock → Times Square de noche</span></div>
+      <div class="day-body">
+        <div class="slot"><div class="t">09:15</div><div class="what"><b>Metro 4/5 desde Wall St a Grand Central–42 St (15 min).</b><div class="sub">Atención: es la semana de la ONU; si la salida este de Grand Central está cerrada, salir por Vanderbilt Av. Evitar caminar hacia la 1ra Av.</div></div></div>
+        <div class="slot"><div class="t">09:30</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Grand+Central+Terminal" target="_blank" rel="noopener">Grand Central Terminal</a></b><div class="sub">El hall principal, el techo con las constelaciones, la galería de los susurros (frente al Oyster Bar). 30 min.</div></div></div>
+        <div class="slot"><div class="t">10:15</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=New+York+Public+Library+Stephen+A+Schwarzman+Building" target="_blank" rel="noopener">Biblioteca Pública</a> + <a href="https://www.google.com/maps/search/?api=1&query=Bryant+Park" target="_blank" rel="noopener">Bryant Park</a></b><div class="sub">La biblioteca no es museo: es un edificio para entrar 15 min y ver la sala de lectura Rose (gratis). Café en Bryant Park.</div></div></div>
+        <div class="slot"><div class="t">11:30</div><div class="what"><b>5ta Avenida hacia el norte (calles 42 → 59).</b><div class="sub"><a href="https://www.google.com/maps/search/?api=1&query=St.+Patrick's+Cathedral+New+York" target="_blank" rel="noopener">Catedral de San Patricio</a> (entrar, gratis), <a href="https://www.google.com/maps/search/?api=1&query=Rockefeller+Center" target="_blank" rel="noopener">Rockefeller Center</a> (la plaza, el Prometeo; la pista de hielo aún no abre), Saks, Tiffany, Apple 5ta Av. (el cubo, abierto 24 h; primer vistazo a precios de iPhone/Mac), <a href="https://www.google.com/maps/search/?api=1&query=Grand+Army+Plaza+Manhattan" target="_blank" rel="noopener">The Plaza</a> y la esquina sur de Central Park.</div></div></div>
+        <div class="slot"><div class="t">13:30</div><div class="what"><b>Almuerzo: <a href="https://www.google.com/maps/search/?api=1&query=Urbanspace+Vanderbilt" target="_blank" rel="noopener">Urbanspace Vanderbilt</a> (food hall) o los carritos halal de la 6ta Av.</b><div class="sub">US$15–20 por persona.</div></div></div>
+        <div class="slot"><div class="t">15:00</div><div class="what"><b>Descanso libre / Central Park sur (Pond y Gapstow Bridge) 45 min.</b><div class="sub">Opcional. Si están cansados, café y sentarse.</div></div></div>
+        <div class="slot"><div class="t">17:30</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Top+of+the+Rock" target="_blank" rel="noopener">Top of the Rock</a> — entrada reservada para ~17:45 (atardecer 18:50).</b><div class="sub">Es el mirador con la mejor foto: Empire State al sur y Central Park al norte. Ver día y noche en la misma entrada. ~US$47–60 por persona según horario; comprar 1–3 días antes.</div></div></div>
+        <div class="slot"><div class="t">19:30</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Times+Square" target="_blank" rel="noopener">Times Square</a> de noche.</b><div class="sub">Caminar desde Rockefeller por la calle 47/49 (8 min). Las escaleras rojas de TKTS para la foto. Cuidado con los "personajes" disfrazados que cobran por foto.</div></div></div>
+        <div class="slot alt"><div class="t">Alt.</div><div class="what"><b>Broadway hoy en vez del sábado.</b><div class="sub">Miércoles hay matinée a las 14:00 y función de 19:00/20:00; la casilla TKTS de Times Square abre a las 11:00 los miércoles. Si Noemi prefiere, el musical va hoy y el sábado queda para los Yankees.</div></div></div>
+        <div class="tips"><b>A pie hoy:</b> ~7 km repartidos. <b>Metro de vuelta:</b> N/R/W desde Times Sq–42 St a Cortlandt St / Rector St (20 min).</div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day">
+      <div class="day-head"><div class="dnum"><small>Jueves</small>24</div><h3>Lower Manhattan y el puente</h3><span class="theme">Wall Street → 9/11 → Oculus → Brooklyn Bridge a pie → DUMBO</span></div>
+      <div class="day-body">
+        <div class="slot"><div class="t">09:00</div><div class="what"><b>Wall Street antes del gentío.</b><div class="sub"><a href="https://www.google.com/maps/search/?api=1&query=New+York+Stock+Exchange" target="_blank" rel="noopener">NYSE</a> (solo por fuera), Fearless Girl, <a href="https://www.google.com/maps/search/?api=1&query=Federal+Hall+National+Memorial" target="_blank" rel="noopener">Federal Hall</a> (la estatua de Washington; entrada gratis, 10 min), <a href="https://www.google.com/maps/search/?api=1&query=Trinity+Church+Wall+Street" target="_blank" rel="noopener">Trinity Church</a>, y el <a href="https://www.google.com/maps/search/?api=1&query=Charging+Bull" target="_blank" rel="noopener">Toro de Bowling Green</a>. Todo en 700 m. Para Carlos: la Bolsa a las 09:30 es el momento de la campana.</div></div></div>
+        <div class="slot"><div class="t">10:30</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=9%2F11+Memorial" target="_blank" rel="noopener">9/11 Memorial</a> (las dos pozas, gratis, sin reserva) + <a href="https://www.google.com/maps/search/?api=1&query=Oculus+Westfield+World+Trade+Center" target="_blank" rel="noopener">Oculus</a> + One World Trade por fuera.</b><div class="sub">45–60 min. El museo se omite. Baños y café dentro del Oculus (Westfield).</div></div></div>
+        <div class="slot"><div class="t">12:00</div><div class="what"><b>Almuerzo temprano en FiDi</b> (Stone Street, o <a href="https://www.google.com/maps/search/?api=1&query=Tin+Building+by+Jean-Georges" target="_blank" rel="noopener">Tin Building</a> en el Seaport, mercado con opciones para los dos).</div></div>
+        <div class="slot"><div class="t">13:30</div><div class="what"><b>Cruzar el <a href="https://www.google.com/maps/search/?api=1&query=Brooklyn+Bridge+pedestrian+entrance+Centre+Street" target="_blank" rel="noopener">Brooklyn Bridge</a> a pie, de Manhattan a Brooklyn.</b><div class="sub">Entrada peatonal frente a City Hall (Centre St). 1.8 km, 40–50 min con fotos. Nueva vereda solo para peatones (las bicis van abajo). Hacia Brooklyn la vista del skyline queda a la espalda: darse vuelta en las torres.</div></div></div>
+        <div class="slot"><div class="t">14:45</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=DUMBO+Brooklyn" target="_blank" rel="noopener">DUMBO</a></b><div class="sub">Foto en Washington St con el Manhattan Bridge de fondo, <a href="https://www.google.com/maps/search/?api=1&query=Jane's+Carousel" target="_blank" rel="noopener">Jane's Carousel</a>, Brooklyn Bridge Park (Pebble Beach), <a href="https://www.google.com/maps/search/?api=1&query=Time+Out+Market+New+York" target="_blank" rel="noopener">Time Out Market</a> (terraza en el piso 5 con la mejor vista de Manhattan, gratis). Helado en Ample Hills.</div></div></div>
+        <div class="slot"><div class="t">17:00</div><div class="what"><b>Regreso en <a href="https://www.google.com/maps/search/?api=1&query=NYC+Ferry+DUMBO+Fulton+Ferry+Landing" target="_blank" rel="noopener">NYC Ferry</a> DUMBO → Wall St / Pier 11.</b><div class="sub">US$4.50, 10 min, y es un mini crucero por el East River con el puente encima. Se paga en la app NYC Ferry o en el muelle. Alternativa: metro A/C desde High St.</div></div></div>
+        <div class="slot"><div class="t">18:00</div><div class="what"><b>Tarde libre en el hotel. Cena en el barrio o del supermercado.</b></div></div>
+        <div class="tips"><b>A pie hoy:</b> ~8 km. Es el día de más caminata; zapatillas cómodas y agua. Si Noemi prefiere no cruzar el puente completo, se camina hasta la primera torre y se regresa (30 min total), y DUMBO se visita en ferry desde Pier 11.</div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day">
+      <div class="day-head"><div class="dnum"><small>Viernes</small>25</div><h3>La Estatua y el lado oeste</h3><span class="theme">Liberty + Ellis Island (o Staten Island Ferry) → Chelsea Market → High Line → Hudson Yards → crucero al atardecer</span></div>
+      <div class="day-body">
+        <div class="slot"><div class="t">08:30</div><div class="what"><b>Opción A — <a href="https://www.google.com/maps/search/?api=1&query=Statue+City+Cruises+Battery+Park" target="_blank" rel="noopener">Ferry oficial a la Estatua de la Libertad</a> (Statue City Cruises, desde Battery Park).</b><div class="sub">Reservar el primer horario (09:00–09:30): menos cola en el control de seguridad tipo aeropuerto. Entrada "Pedestal Reserve" ~US$25.80 c/u incluye ferry, Liberty Island, subida al pedestal y Ellis Island. La corona (162 escalones, sin ascensor) se agota meses antes; no la consideraría. Duración total realista: 4–4.5 h con Ellis Island; 2.5 h si solo bajan en Liberty Island. Desde el hotel en FiDi son 12 min a pie.</div></div></div>
+        <div class="slot alt"><div class="t">Opción B</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Staten+Island+Ferry+Whitehall+Terminal" target="_blank" rel="noopener">Staten Island Ferry</a>, gratis.</b><div class="sub">Sale cada 30 min de Whitehall Terminal (al lado de Battery Park), 25 min por tramo, pasa frente a la Estatua a ~500 m: ponerse a estribor (derecha) a la ida. En Staten Island se baja, se vuelve a subir y regresa. 1 h 15 en total, sin reserva ni cola. Es la que recomiendo si Noemi no está convencida del bote turístico: barco grande y estable, vista suficiente, y ganan la mañana.</div></div></div>
+        <div class="slot"><div class="t">13:00</div><div class="what"><b>Metro A/C/E desde Fulton St a 14 St (15 min) → almuerzo en <a href="https://www.google.com/maps/search/?api=1&query=Chelsea+Market" target="_blank" rel="noopener">Chelsea Market</a>.</b><div class="sub">Los Tacos No. 1, Lobster Place, Very Fresh Noodles. US$15–25 c/u.</div></div></div>
+        <div class="slot"><div class="t">14:30</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=The+High+Line+Gansevoort+Street+entrance" target="_blank" rel="noopener">High Line</a> completa hacia el norte (2.3 km, 1 h con paradas).</b><div class="sub">Parque elevado sobre las vías del tren. Termina en Hudson Yards. Antes, desvío de 10 min a <a href="https://www.google.com/maps/search/?api=1&query=Little+Island" target="_blank" rel="noopener">Little Island</a> (parque sobre el río, gratis).</div></div></div>
+        <div class="slot"><div class="t">16:00</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Hudson+Yards" target="_blank" rel="noopener">Hudson Yards</a>: el Vessel por fuera y el mall (baños, café).</b><div class="sub">Mirador Edge (US$39+) es opcional: si ya hicieron Top of the Rock, no hace falta.</div></div></div>
+        <div class="slot"><div class="t">18:30</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Circle+Line+Sightseeing+Cruises+Pier+83" target="_blank" rel="noopener">Circle Line Harbor Lights</a>, Pier 83 (W 42 St), salida 19:00, 2 h.</b><div class="sub">US$44 c/u. Atardecer + skyline iluminado + pasa a 30 m de la Estatua. Si Noemi hizo la Opción B por la mañana, este crucero es la manera cómoda de "ir a la Estatua" (barco grande, asientos, baño, bar). Desde Hudson Yards son 15 min a pie por la 11va Av. Reservar el día anterior.</div></div></div>
+        <div class="slot"><div class="t">21:15</div><div class="what"><b>Regreso: metro A/C/E desde 42 St–Port Authority a Fulton St (20 min).</b></div></div>
+        <div class="tips"><b>Si el día se hace largo:</b> el crucero se puede mover al domingo. <b>Alternativa gratis al crucero:</b> ver el atardecer desde <a href="https://www.google.com/maps/search/?api=1&query=Pier+57+rooftop+park" target="_blank" rel="noopener">Pier 57</a> (terraza pública) o desde Little Island.</div>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day">
+      <div class="day-head"><div class="dnum"><small>Sábado</small>26</div><h3>Central Park, Upper West y San Gennaro</h3><span class="theme">Central Park → Upper West Side → Little Italy (procesión 14:00) → Chinatown → noche: Broadway o Yankees</span></div>
+      <div class="day-body">
+        <div class="slot"><div class="t">09:00</div><div class="what"><b>Metro 1 / A a 59 St–Columbus Circle (25 min desde FiDi).</b></div></div>
+        <div class="slot"><div class="t">09:30</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Central+Park+Columbus+Circle+entrance" target="_blank" rel="noopener">Central Park</a>, recorrido sur de 2 h a pie.</b><div class="sub">Columbus Circle → Sheep Meadow → <a href="https://www.google.com/maps/search/?api=1&query=Bethesda+Terrace" target="_blank" rel="noopener">Bethesda Terrace y la fuente</a> → The Mall (la alameda de los olmos) → <a href="https://www.google.com/maps/search/?api=1&query=Bow+Bridge+Central+Park" target="_blank" rel="noopener">Bow Bridge</a> → <a href="https://www.google.com/maps/search/?api=1&query=Strawberry+Fields+Central+Park" target="_blank" rel="noopener">Strawberry Fields</a> (mosaico Imagine, frente al Dakota) → salida por W 72 St. Sábado por la mañana el parque está en su mejor momento (corredores, músicos). Bicitaxi si Noemi quiere descansar: negociar precio antes (US$5–7/min es abusivo; hay tarifas publicadas).</div></div></div>
+        <div class="slot"><div class="t">11:45</div><div class="what"><b>Upper West Side: <a href="https://www.google.com/maps/search/?api=1&query=Zabar's" target="_blank" rel="noopener">Zabar's</a> (Broadway y 80) y <a href="https://www.google.com/maps/search/?api=1&query=Levain+Bakery+74th+Street" target="_blank" rel="noopener">Levain Bakery</a> (la galleta famosa).</b><div class="sub">Almuerzo rápido de bagel con salmón en Zabar's o en <a href="https://www.google.com/maps/search/?api=1&query=Barney+Greengrass" target="_blank" rel="noopener">Barney Greengrass</a>.</div></div></div>
+        <div class="slot"><div class="t">13:00</div><div class="what"><b>Metro 1 → 2/3 express desde 72 St a Canal St (25 min).</b></div></div>
+        <div class="slot"><div class="t">13:45</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Mulberry+Street+Little+Italy" target="_blank" rel="noopener">Fiesta de San Gennaro</a>, Mulberry St entre Canal y Houston.</b><div class="sub">Centenario (1926–2026). La <b>Gran Procesión sale a las 14:00</b>. Puestos de zeppole, salchicha con pimientos, cannoli de Ferrara. Va a estar lleno: ir con la mochila adelante. 1.5–2 h.</div></div></div>
+        <div class="slot"><div class="t">15:45</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Chinatown+Manhattan+Mott+Street" target="_blank" rel="noopener">Chinatown</a> (Mott St, Doyers St, Columbus Park) y de vuelta al hotel a pie (20 min) o metro.</b></div></div>
+        <div class="slot"><div class="t">19:30</div><div class="what"><b>Noche a elegir:</b><div class="sub"><b>Broadway</b>: TKTS Times Square abre sábados a las 11:00 (podrían pasar antes del parque si van temprano) o comprar anticipado un musical concreto (Wicked, El Rey León, Aladdin, MJ; funciones de 20:00). <b>Yankees vs. Orioles</b> en Yankee Stadium (metro 4 directo desde Wall St, 35 min; última semana de temporada, entradas desde ~US$40 en MLB/SeatGeek). Si no hay ganas: cena tranquila.</div></div></div>
+        <div class="tips"><b>A pie hoy:</b> ~7 km. Si Noemi prefiere un ritmo más suave, se recorta Chinatown y se vuelve al hotel después de San Gennaro.</div>
+      </div>
+    </div>
+
+    <!-- DAY 6 -->
+    <div class="day">
+      <div class="day-head"><div class="dnum"><small>Domingo</small>27</div><h3>Compras, el Village y el Empire State</h3><span class="theme">Herald Square / 5ta Av. por la mañana → Union Square, Strand (15:00) → Washington Square y Greenwich Village → SoHo → Empire State de noche</span></div>
+      <div class="day-body">
+        <div class="slot"><div class="t">10:00</div><div class="what"><b>Compras grandes (domingo abren 10:00–11:00).</b><div class="sub"><a href="https://www.google.com/maps/search/?api=1&query=Macy's+Herald+Square" target="_blank" rel="noopener">Macy's Herald Square</a> (perfumes: Armani Code; pedir el descuento de visitante del 10% en el mostrador de Visitor Center con pasaporte), <a href="https://www.google.com/maps/search/?api=1&query=Apple+Fifth+Avenue" target="_blank" rel="noopener">Apple 5ta Av.</a> (recoger lo pedido online), Sephora / Ulta (Gucci Guilty), CVS o Target (CeraVe). Ver la pestaña Compras para modelos y precios.</div></div></div>
+        <div class="slot"><div class="t">13:00</div><div class="what"><b>Almuerzo en <a href="https://www.google.com/maps/search/?api=1&query=Koreatown+32nd+Street+Manhattan" target="_blank" rel="noopener">Koreatown</a> (calle 32) o en Eataly Flatiron.</b></div></div>
+        <div class="slot"><div class="t">14:30</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Flatiron+Building" target="_blank" rel="noopener">Flatiron</a> y Madison Square Park → <a href="https://www.google.com/maps/search/?api=1&query=Union+Square+Park" target="_blank" rel="noopener">Union Square</a>.</b><div class="sub">15 min a pie por Broadway.</div></div></div>
+        <div class="slot"><div class="t">15:00</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Strand+Book+Store" target="_blank" rel="noopener">Strand Book Store</a> (828 Broadway y 12 St) — el libro <i>Steal Like an Artist</i>, ya en tu calendario a esta hora.</b><div class="sub">Sección de arte/diseño o pedirlo en información. ~US$13–16. Al lado: <a href="https://www.google.com/maps/search/?api=1&query=Paragon+Sports" target="_blank" rel="noopener">Paragon Sports</a> (Broadway y 18) para probar Brooks y ASICS con buen surtido.</div></div></div>
+        <div class="slot"><div class="t">16:15</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Washington+Square+Park" target="_blank" rel="noopener">Washington Square Park</a> y Greenwich Village.</b><div class="sub">El arco, la fuente, músicos de domingo. Calles Bleecker, MacDougal, Grove St (la casa de <i>Friends</i>, en Bedford y Grove). Café en Caffe Reggio.</div></div></div>
+        <div class="slot"><div class="t">17:45</div><div class="what"><b>SoHo (Broadway y Prince: arquitectura de hierro fundido, tiendas) y cena temprana.</b></div></div>
+        <div class="slot"><div class="t">20:30</div><div class="what"><b><a href="https://www.google.com/maps/search/?api=1&query=Empire+State+Building" target="_blank" rel="noopener">Empire State Building</a>, piso 86, de noche.</b><div class="sub">Entrada con horario, desde ~US$44–48 + US$5 de reserva; abierto hasta tarde (verificar hora de cierre al comprar). Menos cola después de las 20:00. Metro N/R/W desde Prince St a 34 St–Herald Sq (10 min). Vuelta al hotel: R/W a Cortlandt St.</div></div></div>
+        <div class="slot alt"><div class="t">Alt.</div><div class="what"><b>Roosevelt Island en teleférico</b> (US$3 con OMNY, desde 2da Av. y 59): vista aérea del East River, 4 min. Bonito al atardecer si sobra tiempo; está en el borde de la zona ONU, revisar cierres ese día.</div></div>
+      </div>
+    </div>
+
+    <!-- DAY 7 -->
+    <div class="day">
+      <div class="day-head"><div class="dnum"><small>Lunes</small>28</div><h3>Salida</h3><span class="theme">Mañana corta cerca del hotel · JFK a las 15:00 · vuelo 18:45</span></div>
+      <div class="day-body">
+        <div class="slot"><div class="t">08:30</div><div class="what"><b>Desayuno, hacer maletas, pesar (23 kg). Check-out a las 11:00–12:00; dejar maletas en recepción.</b><div class="sub">Si compran mucho, decidir aquí si conviene una 2da maleta (US$100 en el vuelo de vuelta) vs. dejar cajas.</div></div></div>
+        <div class="slot"><div class="t">10:00</div><div class="what"><b>Pendientes de última hora en FiDi</b>: última vuelta por el Seaport / Pier 17 (vista al puente), o metro a Eataly Flatiron para regalos comestibles, o descansar. Almorzar temprano y contundente: la cena a bordo llega tarde.</div></div>
+        <div class="slot"><div class="t">15:00</div><div class="what"><b>Taxi al JFK desde el hotel.</b><div class="sub">Vuelo doméstico a MIA pero con conexión internacional: American pide llegar 2 h antes; con la hora punta (recargo de US$5 desde las 16:00 y tráfico en el BQE/Van Wyck) salir a las 15:00 los deja en T8 hacia las 16:00–16:15. Tarifa fija US$70 + peajes + propina.</div></div></div>
+        <div class="slot"><div class="t">18:45</div><div class="what"><b>AA1174 JFK → MIA.</b> Conexión de 1 h 31 en Miami (llegan 22:02, sale 23:33): es corto pero es la misma aerolínea, sin control migratorio de salida en EE.UU.; en MIA solo cambian de puerta. Llegan a Lima el martes 29 a las 04:10.</div></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>Cosas que quedan fuera y por qué</h4>
+      <p class="small">Museos (por pedido de Noemi). Harlem (por tu límite geográfico). Coney Island y el Bronx salvo el estadio (lejos para 5 días). Summit One Vanderbilt y Edge (duplican mirador; si prefieren Summit por lo "instagrameable", sustituye a Top of the Rock, ~US$44+). Intrepid, Museo de Historia Natural, MoMA, Met: si Noemi cambia de idea, el Met y el Museo de Historia Natural están al borde de Central Park y entrarían el sábado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPRAS ============ -->
+<section data-panel="compras">
+  <div class="stack">
+    <h2>Lista de compras</h2>
+    <p class="lead">Marca lo que ya decidiste o compraste. <b>Los checks se guardan solo en este navegador/dispositivo</b>: si le mandas el archivo a Noemi, ella verá la lista limpia y sus checks no se sincronizan con los tuyos (cada uno lleva su copia). Si quieren una lista compartida en vivo, la publico como página web con estado compartido en otra sesión. Precios de lista en EE.UU. a setiembre 2026; en NYC se suma <b>8.875% de impuesto</b> a todo salvo ropa y calzado de menos de US$110 por prenda (exentos). Aduanas Perú: US$500 libres por persona en total, luego 12% hasta US$1,000; un celular y una laptop de uso personal van aparte si ya vienen abiertos y en uso.</p>
+
+    <div class="callout warn">
+      <h4>Calendario de Apple que les cae justo</h4>
+      <p class="small"><b>9 sep</b>: evento "Surprise and shine": iPhone 18 Pro / Pro Max, iPhone Ultra (plegable), Watch Series 12 y Ultra 4. <b>18–19 sep</b>: venta habitual de los iPhone nuevos (una semana antes de que lleguen; el stock del Pro Max suele estar justo la primera semana: <b>pedir online con recojo en Apple 5ta Av. o SoHo</b>). <b>22 sep</b>: empieza a despacharse el Mac mini nuevo (M6, desde US$899 tras dos subidas de precio este año; M5 Pro desde US$1,699). No se espera AirPods Pro nuevo este año (el Pro 3 salió en 2025), así que si cambias, es al Pro 3.</p>
+    </div>
+
+    <div class="subhead"><h3>Tecnología</h3><span class="pill navy">Apple 5ta Av. (24 h) · Apple SoHo · Best Buy Union Sq</span></div>
+    <div class="check" data-group="tech">
+      <label><input type="checkbox" data-id="iphone"><div><div class="name">iPhone 18 Pro / Pro Max <span class="pill warn">decidir tras el 9 sep</span></div><div class="meta">Rumor de precio: <span class="price">US$1,299–1,399</span> el Pro (+US$200–300 vs. el 17 Pro). Sale ~18 sep. Comprar en Apple desbloqueado ("SIM-free"). Los modelos de EE.UU. son solo eSIM: tu línea Claro debe soportar eSIM (ya la usas, así que sí). Pedir online el 18–19 con recojo en tienda para el 23.</div></div></label>
+      <label><input type="checkbox" data-id="macmini"><div><div class="name">Mac mini (M6, 2026) <span class="pill warn">llega el 22 sep</span></div><div class="meta">Desde <span class="price">US$899</span> (16 GB / 256 GB); recomendable 24 GB para tu trabajo con modelos: ~US$1,099+. Teclado y mouse no vienen. Reservar online con recojo en tienda: en la primera semana puede no haber stock en piso. Caja pequeña (cabe en la maleta de mano). Aduanas: no es "laptop"; supera los US$500 → declarar y pagar 12% sobre el exceso o asumir el riesgo. Revisa tu análisis previo antes de decidir.</div></div></label>
+      <label><input type="checkbox" data-id="airpods"><div><div class="name">AirPods Pro 3</div><div class="meta"><span class="price">US$249</span>. Vs. tus Pro 2 (2 años): mejor cancelación, sensor de pulso, estuche más chico. No hay modelo nuevo este setiembre. Mi lectura: solo si la batería de los tuyos ya cayó; si no, no vale el cambio.</div></div></label>
+      <label><input type="checkbox" data-id="bands"><div><div class="name">Correas deportivas Apple Watch Ultra</div><div class="meta">Con el Ultra 4 (9 sep) salen colores nuevos de Ocean Band, Alpine Loop y Trail Loop: <span class="price">US$99 c/u</span>. Compatibles con tu Ultra actual (49 mm). Ver en Apple 5ta Av. el miércoles y comprar el domingo.</div></div></label>
+      <label><input type="checkbox" data-id="nimble"><div><div class="name">Nimble: cargador de pared y batería portátil</div><div class="meta">CHAMP Pro 20,000 mAh / 65 W (carga laptop) <span class="price">~US$99</span>; CHAMP 10K / 20 W <span class="price">~US$60</span>; cargadores de pared WALLY 65 W. Se consiguen en <a href="https://www.google.com/maps/search/?api=1&query=Best+Buy+Union+Square" target="_blank" rel="noopener">Best Buy Union Square</a> o gonimble.com con envío al hotel (avisar en recepción). Las baterías van en la maleta de mano, nunca en bodega.</div></div></label>
+    </div>
+
+    <div class="subhead"><h3>Zapatillas</h3><span class="pill navy">Paragon Sports (Union Sq) · JackRabbit · Fleet Feet · tiendas ASICS y Brooks</span></div>
+    <div class="check" data-group="shoes">
+      <label><input type="checkbox" data-id="brooks"><div><div class="name">Brooks Ghost Max 3, azul</div><div class="meta"><span class="price">US$160</span> (+8.875% por superar US$110). El azul que circula es <b>Bluewash / Atomizer / Orange</b>; también hay Navy/Peacoat/Clearwater. El modelo que viste "de Anthropic" hay que confirmarlo con la foto: puede ser Ghost Max 3 o Glycerin Max. Probar en <a href="https://www.google.com/maps/search/?api=1&query=Brooks+Running+store+New+York" target="_blank" rel="noopener">tienda Brooks</a> o Paragon.</div></div></label>
+      <label><input type="checkbox" data-id="asics"><div><div class="name">ASICS Gel-Nimbus 28 o Gel-Cumulus 28</div><div class="meta">Nimbus 28 <span class="price">US$165</span> (máxima amortiguación); Cumulus 28 <span class="price">US$145</span> (más liviana, salió feb 2026); el Cumulus 27 anterior se consigue en oferta a <span class="price">~US$90–100</span> en Amazon/outlets. Comparar con la Ghost Max en la misma tienda: mismo uso, elegir una.</div></div></label>
+    </div>
+
+    <div class="subhead"><h3>Perfumes y cuidado personal</h3><span class="pill navy">Macy's Herald Sq · Sephora · Ulta · CVS/Target</span></div>
+    <div class="check" data-group="beauty">
+      <label><input type="checkbox" data-id="armani"><div><div class="name">Armani Code (Eau de Toilette / Parfum)</div><div class="meta">EDT 75 ml <span class="price">~US$100–115</span>; Parfum 75 ml <span class="price">~US$125–140</span>. Macy's, Sephora, Bloomingdale's. En Macy's pedir la tarjeta de visitante (10%) con pasaporte. Duty free de JFK T8 suele ser similar o peor que Macy's con descuento.</div></div></label>
+      <label><input type="checkbox" data-id="givenchy"><div><div class="name">Gucci Guilty</div><div class="meta">Pour Homme EDT 90 ml <span class="price">~US$110–130</span>; Parfum / Elixir más caro. Hay varias versiones (Guilty, Guilty Black, Guilty Absolute, Elixir): confirmar cuál es la tuya por el frasco. Macy's, Sephora, Bloomingdale's; el mismo mostrador que Armani Code, así que se compran juntos el domingo.</div></div></label>
+      <label><input type="checkbox" data-id="cerave"><div><div class="name">CeraVe Foaming Facial Cleanser + revisar el kit</div><div class="meta">473 ml <span class="price">~US$15–18</span> en CVS, Walgreens, Target (mucho más barato que en Lima). <b>Pendiente tuyo:</b> revisar tu kit de skincare y anotar qué más falta (hidratante PM, protector solar, etc.) para comprar todo junto; los productos CeraVe/La Roche-Posay/Cetaphil son la gran ganga de EE.UU.</div></div></label>
+    </div>
+
+    <div class="subhead"><h3>Audición (Oticon)</h3><span class="pill navy">Amazon con envío al hotel · clínicas audiológicas</span></div>
+    <div class="check" data-group="hearing">
+      <label><input type="checkbox" data-id="domes"><div><div class="name">Domos Oticon + filtros ProWax MiniFit</div><div class="meta"><b>Pendiente tuyo:</b> anotar el modelo exacto de domo (Open / Bass single vent / Bass double vent / Power) y la talla (S/M/L), y confirmar que tu filtro es ProWax <b>MiniFit</b> (hay también ProWax estándar). Un pack de 6 filtros ~<span class="price">US$15–20</span>; domos pack de 10 ~<span class="price">US$15–25</span>. Se consiguen en Amazon (pedir con antelación al hotel) o en una clínica audiológica.</div></div></label>
+      <label><input type="checkbox" data-id="oticon"><div><div class="name">Audífonos Oticon nuevos <span class="pill">solo evaluar</span></div><div class="meta"><b>Pendiente tuyo:</b> revisar el archivo donde ya analizamos precios y modelos (Intent / Real) y compararlo con lo que cotice una clínica en NYC. En EE.UU. los audífonos con receta se venden con ajuste presencial: comprarlos en un viaje de 5 días es difícil; si acaso, cotizar y decidir con calma. Costco (miembros) es la referencia más barata.</div></div></label>
+    </div>
+
+    <div class="subhead"><h3>Libro</h3><span class="pill navy">Strand · dom 27, 15:00</span></div>
+    <div class="check" data-group="books">
+      <label><input type="checkbox" data-id="book"><div><div class="name">Steal Like an Artist — Austin Kleon</div><div class="meta"><span class="price">~US$13–16</span>. Strand (828 Broadway). Si no está, Barnes &amp; Noble Union Square (a 2 cuadras). Existe la edición del 10º aniversario con prólogo nuevo.</div></div></label>
+    </div>
+
+    <div class="card">
+      <div class="eyebrow">Estimado si compran todo</div>
+      <div class="tablewrap" style="border:0;margin-top:8px">
+        <table>
+          <tr><td>iPhone 18 Pro</td><td class="num mono">1,299–1,399</td></tr>
+          <tr><td>Mac mini M6 (24 GB)</td><td class="num mono">~1,099</td></tr>
+          <tr><td>AirPods Pro 3</td><td class="num mono">249</td></tr>
+          <tr><td>2 correas Ultra</td><td class="num mono">198</td></tr>
+          <tr><td>Nimble (batería + pared)</td><td class="num mono">~160</td></tr>
+          <tr><td>Zapatillas (1 par)</td><td class="num mono">145–165</td></tr>
+          <tr><td>2 perfumes</td><td class="num mono">~230</td></tr>
+          <tr><td>Skincare + Oticon consumibles + libro</td><td class="num mono">~100</td></tr>
+          <tr><td><b>Subtotal</b></td><td class="num mono"><b>~3,500–3,600</b></td></tr>
+          <tr><td>+ impuesto NYC 8.875% (todo salvo calzado &lt; US$110)</td><td class="num mono">~310</td></tr>
+          <tr><td>+ Aduanas Perú sobre lo que exceda US$500 por persona (declarando)</td><td class="num mono">variable</td></tr>
+        </table>
+      </div>
+      <p class="xs muted" style="margin-top:8px">Truco legítimo: repartir las compras entre los dos pasaportes (US$500 libres cada uno) y llevar el iPhone y los AirPods ya activados y en uso, sin caja. El Mac mini y las zapatillas en caja son lo que Aduanas mira.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHECKLIST ============ -->
+<section data-panel="check">
+  <div class="stack">
+    <h2>Reservas con anticipación y checklist</h2>
+    <p class="small muted">Los checks se guardan solo en este navegador/dispositivo, no viajan con el archivo: si Noemi abre su copia, la ve sin marcar.</p>
+
+    <div class="subhead"><h3>Reservas, en orden de urgencia</h3></div>
+    <div class="check" data-group="res">
+      <label><input type="checkbox" data-id="r-hotel"><div><div class="name">Hotel — hoy, con cancelación gratis <span class="pill bad">urgente</span></div><div class="meta">Semana de la ONU: los precios solo suben desde aquí. Ver pestaña Alojamiento. Después, revisar el 12 y el 19 de setiembre las 4 opciones baratas (YMCA, Leo House, HI NYC, The Jane) por si se libera algo.</div></div></label>
+      <label><input type="checkbox" data-id="r-statue"><div><div class="name">Estatua de la Libertad — en cuanto Noemi decida <span class="pill bad">urgente</span></div><div class="meta">Solo en <a href="https://www.cityexperiences.com/new-york/city-cruises/statue/" target="_blank" rel="noopener">Statue City Cruises</a> (cualquier otro sitio es reventa). "Pedestal Reserve" para el vie 25 a las 09:00. Si eligen el Staten Island Ferry, no hay nada que reservar.</div></div></label>
+      <label><input type="checkbox" data-id="r-iphone"><div><div class="name">iPhone / Mac mini — pedido online con recojo en tienda</div><div class="meta">iPhone: el 18–19 sep en apple.com (recojo Apple 5ta Av. desde el 23). Mac mini: desde el 22 sep. Hace falta cuenta Apple con dirección de EE.UU. o pagar como invitado.</div></div></label>
+      <label><input type="checkbox" data-id="r-totr"><div><div class="name">Top of the Rock — mié 23, ~17:45</div><div class="meta"><a href="https://www.rockefellercenter.com/attractions/top-of-the-rock-observation-deck/" target="_blank" rel="noopener">rockefellercenter.com</a>. Comprar el 20–21 sep; los horarios de atardecer se agotan.</div></div></label>
+      <label><input type="checkbox" data-id="r-esb"><div><div class="name">Empire State — dom 27, ~20:30</div><div class="meta"><a href="https://www.esbnyc.com/buy-tickets" target="_blank" rel="noopener">esbnyc.com</a>. Comprar 1–2 días antes.</div></div></label>
+      <label><input type="checkbox" data-id="r-circle"><div><div class="name">Circle Line Harbor Lights — vie 25, 19:00</div><div class="meta"><a href="https://www.circleline.com/" target="_blank" rel="noopener">circleline.com</a>. Un día antes basta entre semana.</div></div></label>
+      <label><input type="checkbox" data-id="r-show"><div><div class="name">Broadway o Yankees — sáb 26 (o mié 23)</div><div class="meta">Broadway: TKTS el mismo día (hasta 50% dto., app TKTS muestra qué hay) o anticipado en telecharge.com / la web del teatro. Yankees: <a href="https://www.mlb.com/yankees/tickets" target="_blank" rel="noopener">mlb.com/yankees</a> o SeatGeek; sáb 26 vs. Orioles.</div></div></label>
+      <label><input type="checkbox" data-id="r-rest"><div><div class="name">Una cena "especial" (opcional)</div><div class="meta">Si quieren una, reservar por Resy/OpenTable una semana antes. Sugerencias por zona en el itinerario; no hace falta más.</div></div></label>
+    </div>
+
+    <div class="subhead"><h3>Antes de salir de Lima</h3></div>
+    <div class="check" data-group="pre">
+      <label><input type="checkbox" data-id="p-visa"><div><div class="name">Pasaportes con visa vigente (los dos) + copia digital en el celular</div></div></label>
+      <label><input type="checkbox" data-id="p-bank"><div><div class="name">Avisar a los bancos del viaje; llevar 2 tarjetas distintas cada uno</div><div class="meta">Preferir la que no cobre comisión por uso en el extranjero. Al pagar, siempre elegir "USD" y rechazar la conversión a soles del POS. Una de las tarjetas debe ser contactless para el metro.</div></div></label>
+      <label><input type="checkbox" data-id="p-cash"><div><div class="name">Efectivo: US$200–300 por persona, en billetes de 20 o menos</div></div></label>
+      <label><input type="checkbox" data-id="p-esim"><div><div class="name">Confirmar el paquete de GB internacionales (Movistar y Claro) y que la eSIM/roaming esté activado</div></div></label>
+      <label><input type="checkbox" data-id="p-ins"><div><div class="name">Seguro de viaje con cobertura médica en EE.UU.</div><div class="meta">Una consulta de emergencia sin seguro cuesta miles de dólares. Si la tarjeta con la que se pagaron las tasas no lo incluye (se pagó con millas + Apple Pay, probablemente no), contratar uno (Assist Card, AXA, etc.) para los dos.</div></div></label>
+      <label><input type="checkbox" data-id="p-adapter"><div><div class="name">Adaptador: probablemente no hace falta</div><div class="meta">EE.UU. usa enchufe tipo A/B (planos), igual al tipo A de Perú, 120 V. Si sus cargadores tienen patas planas, no necesitan nada. Si alguno tiene patas redondas (tipo C), un adaptador de US$2–3 en cualquier CVS/Duane Reade allá. Llevar una regleta/multiple pequeña ayuda: los hoteles tienen pocos enchufes.</div></div></label>
+      <label><input type="checkbox" data-id="p-apps"><div><div class="name">Apps: Google Maps (mapa offline de Manhattan), Citymapper, Uber, TKTS, NYC Ferry, American Airlines</div></div></label>
+      <label><input type="checkbox" data-id="p-cloth"><div><div class="name">Ropa por capas: 21–24 °C de día, 13–15 °C de noche, posible lluvia</div><div class="meta">Casaca liviana, un impermeable plegable o paraguas, zapatillas cómodas ya usadas (caminan 6–8 km diarios), y espacio libre en la maleta para las compras.</div></div></label>
+      <label><input type="checkbox" data-id="p-meds"><div><div class="name">Medicinas de Noemi en la maleta de mano, con receta</div></div></label>
+      <label><input type="checkbox" data-id="p-bag"><div><div class="name">Pesar maletas: 23 kg cada una; 2da maleta US$118 ida / US$100 vuelta</div><div class="meta">Si van a comprar mucho, salir de Lima con una maleta grande casi vacía dentro de otra.</div></div></label>
+      <label><input type="checkbox" data-id="p-checkin"><div><div class="name">Check-in online 24 h antes (lun 21, 23:45 → desde el dom 20 por la noche)</div></div></label>
+    </div>
+
+    <div class="subhead"><h3>Lo que falta decidir (con Noemi)</h3></div>
+    <div class="grid2">
+      <div class="card"><h4>1. Hotel</h4><p class="small muted">Staypineapple US$418 (mejor nota, Midtown West) vs. Hotel Stanford US$428 (desayuno, Koreatown) vs. Fairfield FiDi US$461 (desayuno, tranquilo) vs. Night Hotel Broadway US$353 (el más barato, básico). Total 6 noches con impuestos: US$2,900 / 2,970 / 3,200 / 2,450.</p></div>
+      <div class="card"><h4>2. Estatua</h4><p class="small muted">Ferry oficial con pedestal (4 h, US$26) vs. Staten Island Ferry (1 h 15, gratis) + crucero al atardecer (US$44).</p></div>
+      <div class="card"><h4>3. Noche del sábado</h4><p class="small muted">Musical de Broadway vs. Yankees vs. nada. Si Broadway, ¿cuál? (Wicked, El Rey León, Aladdin son los seguros para alguien que no habla mucho inglés).</p></div>
+      <div class="card"><h4>4. Compras tras el 9 de setiembre</h4><p class="small muted">Con los precios oficiales del evento cerramos la lista: iPhone sí/no, Mac mini configuración, correas.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="foot">
+  <p>Fuentes: email de confirmación de American Airlines (3 sep 2026); Booking.com y Kayak.com (consultas 5 sep 2026, 2 adultos, 22–28 sep, USD); Airbnb (30 noches, 22 sep–22 oct); webs directas de West Side YMCA, Leo House, HI USA; NYPD/FOX5/amNY (cierres UNGA 2025); un.org (High-level Week 22–28 sep 2026); sangennaronyc.org (17–27 sep 2026, procesión 26 sep 14:00); rockefellercenter.com (pista abre 10 oct); Statue City Cruises (tarifas 2026); MTA (OMNY US$3 / tope semanal US$35); NYC TLC (tarifa fija JFK US$70 + recargos); MLB (Yankees local 22–27 sep); Apple / MacRumors / 9to5Mac (evento 9 sep, Mac mini M6 desde US$899, envíos 22 sep); SUNAT (franquicia US$500, 12%). Los precios de tiendas son de lista y pueden variar. Este documento es planificación de viaje, no asesoría.</p>
+  <p style="margin-top:6px">Versión 2.2 (web pública, sin códigos de reserva) · 5 de setiembre de 2026 · Carpeta: Diversos / 2026_09_Viaje_Nueva_York</p>
+</div>
+</main>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels=[].slice.call(document.querySelectorAll('section[data-panel]'));
+  function show(id,push){
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.tab===id?'true':'false')});
+    panels.forEach(function(p){p.classList.toggle('active',p.dataset.panel===id)});
+    if(push){try{history.replaceState(null,'','#'+id)}catch(e){}}
+    var t=document.querySelector('.tab[data-tab="'+id+'"]'); if(t&&t.scrollIntoView){try{t.scrollIntoView({block:'nearest',inline:'center'})}catch(e){}}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab,true);window.scrollTo({top:0})})});
+  var h=(location.hash||'').replace('#','');
+  if(h&&panels.some(function(p){return p.dataset.panel===h})){show(h,false)}
+  // zone filter for the hotel table
+  var chips=[].slice.call(document.querySelectorAll('#zoneChips .chip'));
+  var rows=[].slice.call(document.querySelectorAll('#hotelTable tbody tr'));
+  chips.forEach(function(ch){ch.addEventListener('click',function(){
+    var z=ch.dataset.zone;
+    chips.forEach(function(c){c.classList.toggle('active',c===ch)});
+    rows.forEach(function(r){r.hidden=!(z==='all'||r.dataset.zone===z)});
+  })});
+  // links per hotel row: Booking (search by name with the trip dates), Kayak (NYC results with dates) and direct site when known
+  rows.forEach(function(r){
+    if(r.classList.contains('zh'))return;
+    var tds=r.querySelectorAll('td'); if(tds.length<7)return;
+    var name=tds[0].textContent.trim();
+    var q=encodeURIComponent(name+' New York');
+    var booking='https://www.booking.com/searchresults.html?ss='+q+'&checkin=2026-09-22&checkout=2026-09-28&group_adults=2&no_rooms=1&group_children=0&selected_currency=USD';
+    // Kayak: página del hotel (id de Kayak) con las fechas; si no tenemos id, la lista filtrada de Manhattan ≥7
+    var kayak=r.dataset.kayak
+      ? 'https://www.kayak.com/hotels/New-York,NY-c15830-h'+r.dataset.kayak+'/2026-09-22/2026-09-28/2adults'
+      : 'https://www.kayak.com/hotels/New-York,NY-c15830/2026-09-22/2026-09-28/2adults?fs=extendedrating=good;neighborhoods=218452&sort=price_a';
+    var google='https://www.google.com/travel/search?q='+q;
+    var html=' <span class="links"><a href="'+booking+'" target="_blank" rel="noopener">Booking</a> · <a href="'+kayak+'" target="_blank" rel="noopener">Kayak'+(r.dataset.kayak?'':' (lista)')+'</a> · <a href="'+google+'" target="_blank" rel="noopener">Google</a>';
+    if(r.dataset.direct){html+=' · <a href="'+r.dataset.direct+'" target="_blank" rel="noopener">Directo</a>'}
+    html+='</span>';
+    tds[6].insertAdjacentHTML('beforeend',html);
+  });
+  // checklist persistence (per device)
+  var KEY='nyc2026-checks';
+  var state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){state={}}
+  [].slice.call(document.querySelectorAll('.check input[type=checkbox]')).forEach(function(cb){
+    var id=cb.dataset.id; if(state[id]){cb.checked=true}
+    cb.addEventListener('change',function(){
+      state[id]=cb.checked; if(!cb.checked){delete state[id]}
+      try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}
+    });
+  });
+})();
+</script> data-direct="https://www.hotelstanford.com/" data-direct="https://www.nighthotels.com/broadway"
