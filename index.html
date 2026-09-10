@@ -150,6 +150,17 @@ td.num,th.num{text-align:right}
 tr.zh td{background:var(--surface-2);font:700 .78rem "Archivo",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);padding:9px 12px}
 tr.zh .sw{width:12px;height:12px;vertical-align:-1px;margin-right:8px}
 tr[hidden]{display:none}
+.prod{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.prod img{width:96px;height:96px;object-fit:contain;border-radius:8px;background:var(--surface-2)}
+.prod h4{margin-bottom:2px}
+.prod .sku{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--ink-3)}
+.prod p{font-size:.88rem;color:var(--ink-2);margin-top:6px}
+.prod .btn{margin-top:8px}
+@media (max-width:520px){.prod{grid-template-columns:72px 1fr}.prod img{width:72px;height:72px}}
+.catbar{display:flex;align-items:baseline;gap:12px;margin:26px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.catbar h3{font-size:1.15rem}
+.catbar .n{font:800 1.6rem "Archivo",sans-serif;color:var(--accent);line-height:1;-webkit-text-stroke:0}
+.catbar .meta{margin-left:auto;font-size:.8rem;color:var(--ink-3);font-family:"IBM Plex Mono",monospace}
 #hotelTable td:last-child{white-space:nowrap;font-size:.82rem}
 #hotelTable .links{display:block;margin-top:2px}
 #hotelTable .links a{font-weight:600}
@@ -160,7 +171,7 @@ tr[hidden]{display:none}
 
 <header class="masthead">
   <div class="masthead-inner">
-    <div class="eyebrow">Plan de viaje · Carlos + Noemi · v3 (9 sep 2026) · hotel reservado</div>
+    <div class="eyebrow">Plan de viaje · Carlos + Noemi · v3.1 (9 sep 2026) · hotel reservado</div>
     <h1>Nueva York con Noemi<span class="dot"></span></h1>
     <div class="flightstrip">
       <span><b>Ida</b> lun 21 sep <span class="num">23:45</span> LIM → MIA → JFK <span class="num">11:33</span> (mar 22)</span>
@@ -261,7 +272,7 @@ tr[hidden]{display:none}
           <li><b>Miradores</b>: uno de día (Top of the Rock, con el Empire State en la foto) y uno de noche (Empire State). Summit One Vanderbilt y Edge quedan como alternativas.</li>
           <li><b>Pista de patinaje de Rockefeller</b>: abre recién el 10 de octubre. No la van a ver.</li>
           <li>Guía turístico: no hace falta. Todo lo del plan se hace solo con Google Maps y metro. A lo sumo un free walking tour en Lower Manhattan (se paga propina).</li>
-          <li><b>Apple:</b> el iPhone 18 Pro y el Watch Ultra 4 salen a la venta el viernes 18, cuatro días antes de que lleguen. Ver la pestaña Compras.</li>
+          <li><b>Apple:</b> el iPhone 18 Pro sale a la venta el viernes 18, cuatro días antes de que lleguen, y la preventa es el sábado 12. Ver la pestaña Compras.</li>
         </ul>
       </div>
     </div>
@@ -598,122 +609,177 @@ tr[hidden]{display:none}
 <!-- ============ COMPRAS ============ -->
 <section data-panel="compras">
   <div class="stack">
-    <h2>Compras: qué conviene después del evento de Apple</h2>
-    <p class="lead">Apple presentó todo hoy, 9 de setiembre ("Surprise and shine", la primera keynote de John Ternus como CEO). Lo importante para ustedes: <b>el iPhone 18 Pro y el Watch Ultra 4 llegan a las tiendas el viernes 18</b>, cuatro días antes de que aterricen, y las correas nuevas ya están a la venta. Los precios de abajo son de lista; en Nueva York se suma <b>8.875%</b> de impuesto salvo ropa y calzado de menos de US$110.</p>
+    <h2>Compras, por categoría</h2>
+    <p class="lead">Cerrada con los precios oficiales del evento del 9 de setiembre y con tus decisiones del mismo día. En Nueva York se suma <b>8.875%</b> de impuesto a todo salvo ropa y calzado de menos de US$110. Los checks se guardan en este dispositivo.</p>
 
-    <div class="callout warn">
-      <h4>Lo que salió hoy, en una línea cada uno</h4>
-      <p class="small">
-        <b>iPhone 18 Pro US$1,199</b> (256 GB) y <b>Pro Max US$1,299</b> — chip A20 Pro de 2 nm, cámara de 48 MP con apertura variable f/1.48–f/4, cámara de vapor, 36 h de video, Dynamic Island más chico, colores Black, Silver, Glacier y Burgundy, <b>solo eSIM</b>. Preventa sábado 12, tiendas viernes 18.<br>
-        <b>Apple Watch Ultra 4 US$799</b> — titanio más delgado y liviano, chip S11, sistema de sensores nuevo, <b>tendencias de presión arterial</b>, batería de ~2 días, carga más rápida y <b>comunicación satelital</b>. Preventa hoy, tiendas viernes 18.<br>
-        <b>AirPods 5 US$129</b> (US$149 con estuche de carga inalámbrica) — gama base, no gama Pro.<br>
-        <b>iPhone Duo</b>, el plegable, ~US$2,000 pero recién en octubre: no alcanza para el viaje.<br>
-        <b>Correas nuevas</b>, todas US$99 y solo 49 mm: Alpine Loop en Dark Olive, Desert y Burgundy; Trail Loop en Dark Umber, Sand y Burgundy; Ocean Band ahora en <b>silicona translúcida</b> (Translucent Gray, Kelp y Black), con extensiones a US$49.
-      </p>
+    <!-- 1 CORREAS -->
+    <div class="catbar"><span class="n">01</span><h3>Correas de Apple Watch</h3><span class="meta">3 piezas · US$297 + IVA</span></div>
+    <p class="small muted" style="max-width:68ch">Todas son de 49 mm y compatibles con tu Ultra 2. En la página de cada una hay que elegir el acabado del herraje: <b>Black Titanium</b>, para que combine con tu caja. Ojo con la talla: las tuyas actuales son <b>Medium</b> y las capturas que me pasaste muestran <b>Small</b> — confirma cuál usas antes de pedir.</p>
+
+    <div class="grid2" style="margin-top:14px">
+      <div class="prod">
+        <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MK7D4ref?wid=300&hei=300&fmt=jpeg" alt="Correa Alpine Loop color Burgundy">
+        <div>
+          <h4>Burgundy Alpine Loop <span class="pill ok">se compra</span></h4>
+          <div class="sku">49 mm · Black Titanium Finish · US$99</div>
+          <p>El único color de la tanda nueva que no repite nada de tu colección. Es la casual que te faltaba.</p>
+          <a class="btn" href="https://www.apple.com/shop/product/mk7d4am/a/49mm-burgundy-alpine-loop-small-natural-titanium-finish" target="_blank" rel="noopener">Ver en Apple</a>
+        </div>
+      </div>
+      <div class="prod">
+        <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MK7G4ref?wid=300&hei=300&fmt=jpeg" alt="Correa Alpine Loop color Desert">
+        <div>
+          <h4>Desert Alpine Loop <span class="pill ok">se compra</span></h4>
+          <div class="sku">49 mm · Black Titanium Finish · US$99</div>
+          <p>Más claro y más arena que tu Terra Cotta, que tira a rojo. Conviven bien.</p>
+          <a class="btn" href="https://www.apple.com/shop/product/mk7g4am/a/49mm-desert-alpine-loop-small-natural-titanium-finish" target="_blank" rel="noopener">Ver en Apple</a>
+        </div>
+      </div>
     </div>
 
-    <div class="subhead"><h3>Lo que ya tienes, y qué haría con cada cosa</h3></div>
+    <div class="prod" style="margin-top:14px;border-color:var(--warn)">
+      <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MK7M4?wid=300&hei=300&fmt=jpeg" alt="Correa Ocean Band color Translucent Kelp">
+      <div>
+        <h4>Translucent Kelp Ocean Band <span class="pill warn">ver en tienda antes</span></h4>
+        <div class="sku">49 mm · Black Titanium Finish · US$99</div>
+        <p>Es la que quieres, pero el material translúcido es nuevo y en foto no se juzga: cambia mucho según la luz y se ve el interior de la correa. En la tienda pídela junto a las otras dos translúcidas y decide con las tres en la mano. Si la Kelp no convence, ninguna de las tres es obligatoria: ya tienes tres Ocean Band para entrenar.</p>
+        <a class="btn" href="https://www.apple.com/shop/product/mk7m4am/a/49mm-translucent-kelp-ocean-band-natural-titanium-finish" target="_blank" rel="noopener">Ver en Apple</a>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:10px">
+      <div class="prod" style="opacity:.85">
+        <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MK7K4?wid=300&hei=300&fmt=jpeg" alt="Correa Ocean Band color Translucent Gray">
+        <div><h4>Translucent Gray</h4><div class="sku">solo para comparar · US$99</div>
+        <a class="btn" href="https://www.apple.com/shop/product/mk7k4am/a/49mm-translucent-gray-ocean-band-natural-titanium-finish" target="_blank" rel="noopener">Ver en Apple</a></div>
+      </div>
+      <div class="prod" style="opacity:.85">
+        <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MK7P4?wid=300&hei=300&fmt=jpeg" alt="Correa Ocean Band color Translucent Black">
+        <div><h4>Translucent Black</h4><div class="sku">solo para comparar · US$99</div>
+        <a class="btn" href="https://www.apple.com/shop/product/mk7p4am/a/49mm-translucent-black-ocean-band-natural-titanium-finish" target="_blank" rel="noopener">Ver en Apple</a></div>
+      </div>
+    </div>
+
+    <div class="check" data-group="correas" style="margin-top:14px">
+      <label><input type="checkbox" data-id="alp-burgundy"><div><div class="name">Burgundy Alpine Loop</div><div class="meta"><span class="price">US$99</span> → US$108 con IVA</div></div></label>
+      <label><input type="checkbox" data-id="alp-desert"><div><div class="name">Desert Alpine Loop</div><div class="meta"><span class="price">US$99</span> → US$108 con IVA</div></div></label>
+      <label><input type="checkbox" data-id="ocean-kelp"><div><div class="name">Translucent Kelp Ocean Band — decidir en tienda</div><div class="meta"><span class="price">US$99</span> → US$108 con IVA</div></div></label>
+    </div>
+
+    <!-- 2 ACCESORIOS -->
+    <div class="catbar"><span class="n">02</span><h3>Accesorios de iPhone</h3><span class="meta">1 pieza · ~US$49</span></div>
+    <div class="prod">
+      <img src="https://cdn.shopify.com/s/files/1/0270/2202/6462/files/MOFT-Trackable-Tripod-Wallet.jpg?width=300" alt="MOFT Trackable Tripod Wallet" onerror="this.style.background='var(--surface-2)';this.alt='MOFT Trackable Tripod Wallet'">
+      <div>
+        <h4>MOFT Snap Tripod Wallet <span class="pill ok">se compra</span></h4>
+        <div class="sku">2 tarjetas · ~US$49</div>
+        <p>Hermana del que ya tienes, pero se abre como trípode en vez de apoyo bajo: sirve para grabar y para videollamadas sin sostener el teléfono. Hay dos versiones: la <b>Trackable</b>, con Find My, que es la que combina con tu ecosistema, y la simple sin rastreo, más barata. Se consigue en moft.com y en algunas Apple Store.</p>
+        <a class="btn" href="https://moft.com/products/magsafe-tripod-wallet-stand-with-find-my" target="_blank" rel="noopener">Versión con Find My</a>
+        <a class="btn" href="https://www.moft.com/products/invisible-phone-tripod-wallet" target="_blank" rel="noopener">Versión simple</a>
+      </div>
+    </div>
+    <div class="check" data-group="acc" style="margin-top:12px">
+      <label><input type="checkbox" data-id="moft-tripod"><div><div class="name">MOFT Snap Tripod Wallet</div><div class="meta"><span class="price">~US$49</span>. Si lo pides a moft.com, que llegue al hotel entre el 23 y el 26, avisando en recepción.</div></div></label>
+      <label><input type="checkbox" data-id="nimble"><div><div class="name">Nimble: batería CHAMP Pro y cargador de pared</div><div class="meta">CHAMP Pro 20.000 mAh / 65 W <span class="price">~US$99</span>. Best Buy Union Square. Las baterías viajan en la maleta de mano, nunca en bodega.</div></div></label>
+    </div>
+
+    <!-- 3 IPHONE -->
+    <div class="catbar"><span class="n">03</span><h3>iPhone 18 Pro</h3><span class="meta">decisión abierta · US$1,305 con IVA</span></div>
+    <p class="small muted" style="max-width:68ch">Lo que ganas frente a tu 16 Pro: apertura variable f/1.48–f/4 (esto no existía antes), A20 Pro de 2 nm con 40% más GPU, 3.000 nits contra 2.000, y 36 h de video contra ~27 h. Tu plan de venderlo en Perú en vez de dar trade-in tiene sentido — el mercado local paga bastante más que Apple — pero <b>el cuándo lo vendes cambia todo</b>. Ver el bloque de abajo.</p>
+    <div class="check" data-group="iphone" style="margin-top:12px">
+      <label><input type="checkbox" data-id="iphone18"><div><div class="name">iPhone 18 Pro 256 GB</div><div class="meta"><span class="price">US$1,199</span> → US$1,305 con IVA. Preventa <b>sábado 12, 8:00 hora de Nueva York</b> con recojo en tienda.</div></div></label>
+      <label><input type="checkbox" data-id="claro-cac"><div><div class="name">Ir a un CAC de Claro antes de viajar <span class="pill bad">bloqueante</span></div><div class="meta">Preguntar si soportan la <b>transferencia rápida de eSIM</b> de iPhone a iPhone. De la respuesta depende todo el plan de migración.</div></div></label>
+    </div>
+
+    <div class="callout bad" style="margin-top:16px">
+      <h4>No vendas el 16 Pro antes de viajar</h4>
+      <p class="small">Vender en Perú en vez de dar trade-in es correcto: el mercado local paga bastante más que Apple. Lo que no funciona es venderlo <b>antes</b> del viaje, por tres razones concretas.<br><br>
+      <b>1. Te quedas sin línea peruana en Nueva York.</b> Claro Perú exige ir presencialmente a un CAC, con validación de huella, para pasar tu eSIM a otro equipo. Desde Estados Unidos no se puede hacer por app ni por teléfono. Si vendes el 16 Pro antes, tu número se queda en el aire justo cuando lo necesitas para los códigos SMS del banco.<br>
+      <b>2. Las apps de banca se reinscriben, no se restauran.</b> El respaldo de iCloud trae las apps y su configuración, pero BCP, Interbank y BBVA obligan a afiliar el equipo nuevo desde cero, y casi siempre mandan un SMS al número peruano o piden el token del equipo viejo. Con los dos teléfonos en la mano eso toma diez minutos; sin el viejo, se vuelve un problema desde el extranjero.<br>
+      <b>3. Si el iPhone se agota, te quedas sin teléfono.</b> Ya vimos que el 18 Pro es el único producto con riesgo real de stock. Vender antes es apostar a que sí lo consigues.</p>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div class="eyebrow">El orden que sí funciona</div>
+      <div class="day-body" style="padding:14px 0 0">
+        <div class="slot"><div class="t">Antes<br>de viajar</div><div class="what"><b>Ir a un CAC de Claro y preguntar una cosa concreta.</b><div class="sub">Si soportan la <b>"transferencia rápida de eSIM"</b> de iPhone a iPhone (la función de Apple que mueve la línea entre equipos sin pasar por la tienda). Si dicen que sí, puedes hacerlo tú mismo en el hotel. Si dicen que no, la línea se transfiere recién al volver a Lima, y hay que planear el viaje con eso en mente. Aprovecha y pide que te dejen anotado el procedimiento.</div></div></div>
+        <div class="slot"><div class="t">Antes<br>de viajar</div><div class="what"><b>Respaldo completo de iCloud y espacio de sobra.</b><div class="sub">Ajustes → tu nombre → iCloud → Copia en iCloud → Crear copia ahora. Si te falta espacio, sube al plan de 2 TB un mes (US$10) y lo bajas después. Verifica también que el iPhone esté en iOS 27, que sale el 14.</div></div></div>
+        <div class="slot"><div class="t">Sáb 12</div><div class="what"><b>Preventa con recojo en tienda.</b><div class="sub">8:00 hora de Nueva York, 7:00 en Lima.</div></div></div>
+        <div class="slot"><div class="t">Viaje</div><div class="what"><b>Viajas con el 16 Pro y compras el 18 Pro allá.</b><div class="sub">Los dos teléfonos contigo. El 16 Pro mantiene tu línea Claro y recibe los SMS del banco durante todo el viaje.</div></div></div>
+        <div class="slot"><div class="t">En el<br>hotel</div><div class="what"><b>Migración con Quick Start, los dos equipos juntos.</b><div class="sub">Enciendes el 18 Pro al lado del 16 Pro, con WiFi del hotel y ambos cargados. La transferencia directa de equipo a equipo pasa <b>todo</b>: apps, fotos, mensajes, claves, Apple Pay, Salud y la configuración del Watch. Es mejor que restaurar del respaldo porque no depende de la nube ni de la velocidad del WiFi. Toma entre 30 y 60 minutos: hazlo una noche, no antes de salir.</div></div></div>
+        <div class="slot"><div class="t">En el<br>hotel</div><div class="what"><b>Datos para el 18 Pro mientras no tengas la línea.</b><div class="sub">El modelo de EE.UU. es <b>solo eSIM</b>, no tiene bandeja de chip, así que un SIM físico de Claro no entra jamás. Mientras tu línea siga en el 16 Pro, el 18 Pro funciona con el WiFi del hotel, o le pones una eSIM turística (Airalo o Ubigi, unos US$10–20 por el viaje) y queda con datos propios. Sí, se puede instalar una eSIM turística estando en Estados Unidos: se compra por app y se escanea el QR ahí mismo, solo hace falta internet, y el WiFi del hotel basta.</div></div></div>
+        <div class="slot"><div class="t">Al<br>volver</div><div class="what"><b>CAC de Claro: pasar la eSIM al 18 Pro.</b><div class="sub">Con los dos equipos y tu DNI. Ahí recién el 16 Pro se queda sin línea.</div></div></div>
+        <div class="slot"><div class="t">Al<br>volver</div><div class="what"><b>Recién ahí: borrar y vender el 16 Pro.</b><div class="sub">Ajustes → General → Transferir o restablecer → Borrar contenidos y ajustes. Eso lo saca de Buscar y desactiva el bloqueo de activación; si no lo haces, el comprador recibe un ladrillo. Antes de borrarlo, comprueba que todo esté ya en el 18 Pro: banca, Apple Pay, fotos, WhatsApp y el Watch emparejado.</div></div></div>
+      </div>
+      <div class="tips" style="margin-top:12px"><b>Dos cosas más:</b> el iPhone 18 Pro comprado en Estados Unidos funciona perfecto en Perú, pero la garantía de iPhone se atiende en el país de compra, así que un reemplazo por falla habría que resolverlo allá o por AppleCare — vale la pena revisar si te conviene contratarlo. Y el bloqueo de activación: el 18 Pro queda ligado a tu Apple ID desde el primer día, no a la tienda.</div>
+    </div>
+
+    <!-- 4 PERFUMES -->
+    <div class="catbar"><span class="n">04</span><h3>Perfumes y cuidado personal</h3><span class="meta">Macy's y Target, a 2 cuadras</span></div>
+    <div class="check" data-group="beauty">
+      <label><input type="checkbox" data-id="armani"><div><div class="name">Armani Code (EDT o Parfum)</div><div class="meta">EDT 75 ml <span class="price">~US$100–115</span>; Parfum <span class="price">~US$125–140</span>. Macy's Herald Square; pedir la tarjeta de visitante (10%) en el Visitor Center con pasaporte.</div></div></label>
+      <label><input type="checkbox" data-id="gucci"><div><div class="name">Gucci Guilty</div><div class="meta">Pour Homme EDT 90 ml <span class="price">~US$110–130</span>. Mismo mostrador. Confirmar la versión: Guilty, Black, Absolute o Elixir.</div></div></label>
+      <label><input type="checkbox" data-id="cerave"><div><div class="name">CeraVe Foaming Cleanser + revisar el kit</div><div class="meta">473 ml <span class="price">~US$15–18</span> en el Target de Herald Square. <b>Pendiente tuyo:</b> revisar qué más falta del kit antes de viajar; CeraVe y La Roche-Posay son la gran ganga de EE.UU.</div></div></label>
+    </div>
+
+    <!-- 5 ZAPATILLAS -->
+    <div class="catbar"><span class="n">05</span><h3>Zapatillas</h3><span class="meta">Paragon Sports, Union Square</span></div>
+    <div class="check" data-group="shoes">
+      <label><input type="checkbox" data-id="brooks"><div><div class="name">Brooks Ghost Max 3 azul</div><div class="meta"><span class="price">US$160</span> + IVA. El azul de este año es Bluewash/Atomizer/Orange; también hay Navy/Peacoat/Clearwater. Confirmar con la foto de referencia si era Ghost Max o Glycerin Max.</div></div></label>
+      <label><input type="checkbox" data-id="asics"><div><div class="name">ASICS Gel-Nimbus 28 o Gel-Cumulus 28</div><div class="meta">Nimbus <span class="price">US$165</span> (máxima amortiguación) · Cumulus <span class="price">US$145</span> (más liviana) · Cumulus 27 en oferta <span class="price">~US$90–100</span>. Probar contra la Brooks en la misma tienda y elegir una sola.</div></div></label>
+    </div>
+
+    <!-- 6 SALUD -->
+    <div class="catbar"><span class="n">06</span><h3>Audición</h3><span class="meta">hilo aparte en la carpeta</span></div>
+    <div class="check" data-group="hearing">
+      <label><input type="checkbox" data-id="domes"><div><div class="name">Oticon: domos y filtros ProWax MiniFit</div><div class="meta">Filtros ~<span class="price">US$15–20</span> el pack de 6; domos ~<span class="price">US$15–25</span> el de 10. <b>Pendiente tuyo:</b> anotar el tipo de domo (Open / Bass / Power) y la talla.</div></div></label>
+      <label><input type="checkbox" data-id="oticon-intent"><div><div class="name">Oticon Intent — ver el análisis aparte</div><div class="meta">El archivo <span class="mono">compra-audifonos-nueva-york.html</span> de esta carpeta compara las tres vías: online US$3,258, clínica en Nueva York US$4,672, Oticon Perú US$4,700.</div></div></label>
+    </div>
+
+    <!-- 7 LIBRO -->
+    <div class="catbar"><span class="n">07</span><h3>Libro</h3><span class="meta">domingo 27, 15:00</span></div>
+    <div class="check" data-group="books">
+      <label><input type="checkbox" data-id="book"><div><div class="name">Steal Like an Artist — Austin Kleon</div><div class="meta"><span class="price">~US$13–16</span> en Strand (828 Broadway y calle 12), como lo tienes en el calendario. Si no está, Barnes &amp; Noble Union Square a dos cuadras.</div></div></label>
+    </div>
+
+    <!-- DESCARTADO -->
+    <div class="catbar"><span class="n">08</span><h3>Descartado, y por qué</h3><span class="meta">decisiones del 9 sep</span></div>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>Tu equipo</th><th>Lo nuevo</th><th>Veredicto</th><th class="num">Costo + IVA NY</th></tr></thead>
+        <thead><tr><th>Qué</th><th>Motivo</th></tr></thead>
         <tbody>
-          <tr style="background:var(--ok-soft)">
-            <td><b>Apple Watch Ultra 2</b><br><span class="xs muted">GPS+Cellular 49 mm Black Titanium</span></td>
-            <td>Watch Ultra 4 · US$799</td>
-            <td><b>Sí — es tu mejor upgrade.</b> Saltas dos generaciones. Ganas satélite (el Ultra 2 no lo tiene: llegó con el Ultra 3), tendencias de presión arterial, batería de ~2 días contra 36 h, chip S11 contra S9, caja más delgada y el sensor de ritmo cardíaco más preciso que ha hecho Apple. Y <b>tus nueve correas siguen sirviendo</b>, porque todas las 49 mm son compatibles.</td>
-            <td class="num mono">870</td>
-          </tr>
-          <tr style="background:var(--ok-soft)">
-            <td><b>AirPods Pro 2</b><br><span class="xs muted">MagSafe USB-C · A3048</span></td>
-            <td>AirPods Pro 3 · US$249<br><span class="xs muted">(no los AirPods 5)</span></td>
-            <td><b>Sí, pero cómpralos en Amazon, no en Apple.</b> Los AirPods 5 de hoy son gama base: no son un upgrade desde tus Pro 2. El salto real es el Pro 3 (setiembre 2025): el doble de cancelación de ruido que tu Pro 2, traducción en vivo, sensor de ritmo cardíaco y mejor ajuste. No habrá Pro 4 hasta 2027, así que no se te queda viejo. En Apple cuesta US$249; en Amazon ha estado en <b>US$199</b> estas semanas y llegó a US$169 en Prime Day.</td>
-            <td class="num mono">217–271</td>
-          </tr>
-          <tr>
-            <td><b>iPhone 16 Pro</b></td>
-            <td>iPhone 18 Pro · US$1,199</td>
-            <td><b>Solo si te importa la cámara.</b> Ganas de verdad: apertura variable f/1.48–f/4 (eso no existía), A20 Pro de 2 nm con 40% más GPU, 12 GB de RAM, 3.000 nits contra 2.000, y 36 h de video contra ~27 h. Pero tu 16 Pro corre iOS 27 sin problema y el precio subió US$100 respecto del año pasado. Yo esperaría al 19 Pro salvo que la cámara sea tu prioridad o quieras aprovechar el diferencial con Lima. <b>Ojo:</b> el modelo de EE.UU. es solo eSIM — confirma con Claro que te transfieren la línea a un equipo nuevo sin costo.</td>
-            <td class="num mono">1,305</td>
-          </tr>
-          <tr>
-            <td><b>iPad A16</b> + Logitech Combo Touch + Apple Pencil</td>
-            <td>—</td>
-            <td><b>Nada que hacer.</b> Hoy no se anunció ningún iPad; los iPad se renuevan en primavera. Tu configuración queda igual todo el año.</td>
-            <td class="num mono">—</td>
-          </tr>
-          <tr>
-            <td><b>MOFT Find My MagSafe Wallet Stand</b><br><span class="xs muted">+ Satechi verde</span></td>
-            <td>MOFT Snap Tripod Wallet · Snap Field Wallet · US$49</td>
-            <td><b>No compres nada.</b> Tu MOFT de abril <i>es</i> el producto nuevo de 2026, el primero con Find My. Lo que salió después son variantes del mismo: el Tripod (más altura, para grabar) y el Field (tipo sobre, más tarjetas). No son mejoras, son formatos distintos. El Satechi verde es el modelo sin Find My, sirve de respaldo. Solo miraría el Tripod si te falta un trípode de viaje.</td>
-            <td class="num mono">—</td>
-          </tr>
+          <tr><td><b>Apple Watch Ultra 4</b><br><span class="xs muted">US$799</span></td><td>Tu decisión, y es coherente: usas el reloj para correr, entrenar y salir, no todo el día, así que el sistema de sensores nuevo y las tendencias de presión arterial —que es donde está el salto— no te aportan, y el sensor encendido con la luz verde te molesta. Lo que sí te habrías llevado es el satélite y los dos días de batería; si algún día eso pesa más, el Ultra 2 sigue teniendo reventa.</td></tr>
+          <tr><td><b>AirPods Pro 3</b><br><span class="xs muted">US$249</span></td><td><b>Tenías razón y yo me equivoqué:</b> Live Translation funciona en los AirPods Pro 2 desde iOS 26, no es exclusiva del Pro 3. Lo que de verdad separa al Pro 3 es el doble de cancelación de ruido, el sensor de ritmo cardíaco y las puntas nuevas con mejor sujeción. Con tus Pro 2 sanos, no justifica US$249.</td></tr>
+          <tr><td><b>Trail Loop</b><br><span class="xs muted">US$99</span></td><td>No te gustan y se ven delgadas. Tu esquema es claro: Alpine para casual, Ocean para entrenar. Retiro la recomendación.</td></tr>
+          <tr><td><b>MOFT Snap Field Wallet</b><br><span class="xs muted">US$49</span></td><td>Ocho tarjetas en formato sobre; no es tu uso.</td></tr>
+          <tr><td><b>Mac mini M6</b><br><span class="xs muted">desde US$899</span></td><td>No se anunció el 9 de setiembre y ya no está en la lista. Si reaparece antes del viaje, lo reevaluamos.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <div class="subhead"><h3>Correas: tienes nueve, te falta una sola cosa</h3></div>
-    <div class="grid2">
-      <div class="card">
-        <div class="eyebrow">Tu colección actual</div>
-        <ul class="bul small" style="margin-top:8px">
-          <li><b>Alpine Loop (4):</b> Black, Light Blue, Terra Cotta, verde — tus casuales.</li>
-          <li><b>Ocean Band (3):</b> Neon Green, Anchor Blue, Ice Blue — tus deportivas.</li>
-          <li><b>Trail Loop (1):</b> Black/Charcoal M/L.</li>
-          <li><b>Black Titanium</b> — la formal.</li>
-        </ul>
-        <p class="small muted" style="margin-top:10px">Todas son de 49 mm con acabado Black Titanium, así que combinan con el Ultra 4 negro sin cambiar nada.</p>
-      </div>
-      <div class="card" style="border-color:var(--ok)">
-        <div class="eyebrow">Mi recomendación</div>
-        <h4 style="margin-top:6px">Una Trail Loop nueva — Sand o Dark Umber · US$99</h4>
-        <p class="small muted">Es el único hueco real de tu colección: tienes una sola Trail Loop y es la correa correcta para correr. Es la más liviana y transpirable de las tres familias; la Ocean Band, que es la que estás usando para deporte, se diseñó para buceo — pesa, es de silicona maciza y en el calor de Lima suda. Cambiar de Ocean a Trail para correr se nota más que cualquier color nuevo.</p>
-        <hr class="hr" style="margin:12px 0">
-        <h4>Si quieres además una casual: Alpine Loop Burgundy · US$99</h4>
-        <p class="small muted">Es el único color de la tanda nueva que no solapa con lo que ya tienes. El Dark Olive es prácticamente tu verde y el Desert está cerca de tu Terra Cotta.</p>
-        <hr class="hr" style="margin:12px 0">
-        <h4>Lo que <b>no</b> compraría</h4>
-        <p class="small muted">Otra Ocean Band. Las nuevas son translúcidas — material distinto, mismo uso — y ya tienes tres. Y ninguna Alpine más allá de la Burgundy: cuatro es de sobra.</p>
-      </div>
-    </div>
-
-    <div class="subhead"><h3>El resto de la lista</h3><span class="pill navy">se guarda en este dispositivo</span></div>
-    <div class="check" data-group="resto">
-      <label><input type="checkbox" data-id="trail"><div><div class="name">Trail Loop Sand o Dark Umber <span class="pill ok">recomendado</span></div><div class="meta"><span class="price">US$99</span> + IVA = US$108. Apple 5ta Av. o SoHo. Se puede pedir online con recojo en tienda.</div></div></label>
-      <label><input type="checkbox" data-id="ultra4"><div><div class="name">Apple Watch Ultra 4 <span class="pill ok">recomendado</span></div><div class="meta"><span class="price">US$799</span> + IVA = US$870. Preventa desde hoy, en tiendas el 18. Preguntar por el trade-in del Ultra 2 en la misma tienda.</div></div></label>
-      <label><input type="checkbox" data-id="airpods3"><div><div class="name">AirPods Pro 3 <span class="pill warn">mejor en Amazon</span></div><div class="meta">Amazon <span class="price">~US$199</span> · Apple <span class="price">US$249</span> + IVA. Si los compras en Amazon, pide envío al hotel avisando en recepción, o cómpralos en Apple si prefieres la garantía inmediata.</div></div></label>
-      <label><input type="checkbox" data-id="iphone18"><div><div class="name">iPhone 18 Pro 256 GB <span class="pill">opcional</span></div><div class="meta"><span class="price">US$1,199</span> + IVA = US$1,305. Preventa sábado 12. Ver abajo la estrategia de stock.</div></div></label>
-      <label><input type="checkbox" data-id="alpine-burgundy"><div><div class="name">Alpine Loop Burgundy <span class="pill">opcional</span></div><div class="meta"><span class="price">US$99</span> + IVA = US$108.</div></div></label>
-      <label><input type="checkbox" data-id="armani"><div><div class="name">Armani Code (EDT o Parfum)</div><div class="meta"><span class="price">~US$100–140</span>. Macy's Herald Square, a 2 cuadras del hotel; pedir la tarjeta de visitante (10% de descuento) con pasaporte.</div></div></label>
-      <label><input type="checkbox" data-id="gucci"><div><div class="name">Gucci Guilty</div><div class="meta"><span class="price">~US$110–130</span> el EDT 90 ml. Mismo mostrador que el Armani. Confirmar cuál versión quieres (Guilty, Black, Elixir).</div></div></label>
-      <label><input type="checkbox" data-id="cerave"><div><div class="name">CeraVe Foaming Cleanser + revisar el kit</div><div class="meta"><span class="price">~US$15–18</span> los 473 ml en el Target de Herald Square, a 3 minutos. <b>Pendiente tuyo:</b> revisar qué más falta del kit antes de viajar.</div></div></label>
-      <label><input type="checkbox" data-id="brooks"><div><div class="name">Zapatillas: Brooks Ghost Max 3 azul o ASICS Nimbus 28</div><div class="meta">Brooks <span class="price">US$160</span> · Nimbus 28 <span class="price">US$165</span> · Cumulus 28 <span class="price">US$145</span>. Probar ambas en Paragon Sports (Union Square). Calzado sobre US$110 sí paga IVA.</div></div></label>
-      <label><input type="checkbox" data-id="nimble"><div><div class="name">Nimble: batería y cargador de pared</div><div class="meta">CHAMP Pro 20.000 mAh / 65 W <span class="price">~US$99</span>. Best Buy Union Square. Las baterías van en la maleta de mano.</div></div></label>
-      <label><input type="checkbox" data-id="oticon"><div><div class="name">Oticon: domos y filtros ProWax MiniFit</div><div class="meta"><b>Pendiente tuyo:</b> anotar el modelo y talla exactos. Va junto con el análisis de los Oticon Intent que está en el archivo aparte de la carpeta.</div></div></label>
-      <label><input type="checkbox" data-id="book"><div><div class="name">Steal Like an Artist — Austin Kleon</div><div class="meta"><span class="price">~US$13–16</span> en Strand (828 Broadway), domingo 27 a las 15:00 como lo tienes en el calendario.</div></div></label>
-    </div>
-
+    <!-- TOTALES -->
+    <div class="catbar"><span class="n">09</span><h3>Cuánto sale</h3></div>
     <div class="card">
-      <div class="eyebrow">Cuánto sale, según hasta dónde llegues</div>
-      <div class="tablewrap" style="border:0;margin-top:8px">
+      <div class="tablewrap" style="border:0">
         <table>
           <tbody>
-            <tr><td><b>Escenario mínimo</b> — Trail Loop + perfumes + CeraVe + libro + Nimble</td><td class="num mono">~570</td></tr>
-            <tr><td><b>Escenario que recomiendo</b> — lo anterior + Watch Ultra 4 + AirPods Pro 3</td><td class="num mono">~1,660</td></tr>
-            <tr><td><b>Escenario completo</b> — todo lo anterior + iPhone 18 Pro + zapatillas + Alpine Burgundy</td><td class="num mono">~3,250</td></tr>
+            <tr><td>Correas (2 Alpine seguras + Kelp si convence)</td><td class="num mono">216–324</td></tr>
+            <tr><td>MOFT Snap Tripod + Nimble</td><td class="num mono">~161</td></tr>
+            <tr><td>Perfumes + CeraVe</td><td class="num mono">~250</td></tr>
+            <tr><td>Zapatillas (un par)</td><td class="num mono">145–165</td></tr>
+            <tr><td>Oticon consumibles + libro</td><td class="num mono">~50</td></tr>
+            <tr><td><b>Sin iPhone</b></td><td class="num mono"><b>~820–950</b></td></tr>
+            <tr><td>+ iPhone 18 Pro 256 GB</td><td class="num mono">1,305</td></tr>
+            <tr><td><b>Con iPhone</b></td><td class="num mono"><b>~2,125–2,255</b></td></tr>
           </tbody>
         </table>
       </div>
-      <p class="xs muted" style="margin-top:8px">Incluye 8.875% de impuesto de Nueva York. Aduanas Perú: US$500 libres por persona (son dos pasaportes, así que US$1,000 en total), y 12% sobre lo que exceda hasta US$1,000 por viaje. El reloj y el teléfono que vengan puestos y en uso, sin caja, son efectos personales; lo que va en caja sellada es lo que Aduanas mira. En el escenario recomendado conviene declarar y pagar el 12% sobre el exceso: son unos US$80 y evita el problema.</p>
+      <p class="xs muted" style="margin-top:8px">Incluye el 8.875% de Nueva York. Aduanas Perú: US$500 libres por persona, y son dos pasaportes, así que US$1,000 en total; sobre el exceso, 12% hasta US$1,000 por viaje. Sin el iPhone entran holgados en la franquicia. Con el iPhone conviene declararlo y pagar el 12% sobre el exceso, o llevarlo puesto y en uso, sin caja, que es como se mira un efecto personal.</p>
     </div>
 
     <div class="callout">
-      <h4>¿Se agota? Sí, el iPhone. Lo demás no.</h4>
-      <p class="small">
-        <b>iPhone 18 Pro — riesgo alto, hay que actuar el sábado 12.</b> La preventa abre el sábado 12 a las 8:00 hora de Nueva York (7:00 en Lima) y los plazos de entrega se corren de días a 3–6 semanas en los primeros 15 minutos. Ustedes llegan el 22, cuatro días después del lanzamiento: en Nueva York hay 10 Apple Stores y cada mañana liberan inventario para recojo, así que algo se consigue, pero los colores nuevos (Burgundy), el Pro Max y las capacidades altas son justo lo que falta. <b>La jugada:</b> el sábado 12 hacer el pedido en apple.com eligiendo <b>"Recoger en tienda"</b>, una Apple Store de Manhattan y una fecha entre el 22 y el 27. Queda separado a tu nombre.<br>
-        <b>El detalle de la tarjeta:</b> apple.com de EE.UU. a veces rechaza tarjetas extranjeras por la dirección de facturación. Si el pedido no pasa, no insistas: en la tienda física la tarjeta pasa sin problema, así que el plan B es revisar la app Apple Store cada mañana del viaje y comprar presencial. Para recoger un pedido: pasaporte y la misma tarjeta.<br>
-        <b>Watch Ultra 4 — riesgo medio.</b> También sale el 18 y la preventa ya está abierta. Los relojes suelen tener mejor stock en tienda que los iPhone, pero si lo tienes decidido, reservar recojo el mismo sábado 12 cuesta nada.<br>
-        <b>Correas, AirPods y accesorios — sin riesgo.</b> Las correas casi nunca se agotan; a lo sumo falta un color puntual en una tienda concreta la primera semana, y se resuelve pidiendo recojo en otra. Los AirPods Pro 3 llevan un año en el mercado y hay en todas partes. El MOFT se vende en las Apple Store.
-      </p>
+      <h4>Lo único que se agota: el iPhone</h4>
+      <p class="small">La preventa abre el <b>sábado 12 a las 8:00 de Nueva York (7:00 en Lima)</b> y los plazos de entrega saltan de días a 3–6 semanas en los primeros quince minutos. Llegan el 22, cuatro días después del lanzamiento: las 10 Apple Stores de Nueva York liberan inventario de recojo cada mañana, pero lo que falta es justo lo más pedido. <b>La jugada:</b> el sábado 12, pedido en apple.com con "Recoger en tienda", una Apple Store de Manhattan y fecha entre el 22 y el 27. Si la tarjeta peruana rebota por la dirección de facturación, no insistas: en tienda física pasa sin problema, así que el plan B es la app Apple Store cada mañana del viaje. Para recoger: pasaporte y la misma tarjeta.<br>
+      Las correas, el MOFT, los perfumes y las zapatillas no se agotan; a lo sumo falta un color puntual en una tienda y se resuelve pidiendo recojo en otra.</p>
     </div>
   </div>
 </section>
@@ -755,7 +821,7 @@ tr[hidden]{display:none}
 
     <div class="subhead"><h3>Lo que falta decidir (con Noemi)</h3></div>
     <div class="grid2">
-      <div class="card"><h4>1. Apple: hasta dónde llegar</h4><p class="small muted">Watch Ultra 4 (US$870 con impuesto) es el que recomiendo. AirPods Pro 3, sí pero en Amazon. iPhone 18 Pro (US$1,305) solo si te importa la cámara. Decidirlo antes del sábado 12 para alcanzar la preventa.</p></div>
+      <div class="card"><h4>1. iPhone 18 Pro: sí o no</h4><p class="small muted">US$1,305 con impuesto, y hay que decidirlo antes del sábado 12 para alcanzar la preventa. El Watch Ultra 4 y los AirPods Pro 3 ya quedaron descartados. Antes de decidir, pasar por un CAC de Claro (ver Compras).</p></div>
       <div class="card"><h4>2. Estatua</h4><p class="small muted">Ferry oficial con pedestal (4 h, US$26) vs. Staten Island Ferry (1 h 15, gratis) + crucero al atardecer (US$44).</p></div>
       <div class="card"><h4>3. Noche del sábado</h4><p class="small muted">Musical de Broadway vs. Yankees vs. nada. Si Broadway, ¿cuál? (Wicked, El Rey León, Aladdin son los seguros para alguien que no habla mucho inglés).</p></div>
       <div class="card"><h4>4. Las dos camas del hotel</h4><p class="small muted">Confirmar con el hotel esta semana. Es lo único de la reserva que quedó abierto y afecta seis noches de sueño.</p></div>
@@ -765,7 +831,7 @@ tr[hidden]{display:none}
 
 <div class="foot">
   <p>Fuentes: email de confirmación de American Airlines (3 sep 2026); confirmación de reserva de Agoda (consultada el 9 sep 2026); keynote de Apple del 9 sep 2026 y apple.com para los precios de las correas; MacRumors, 9to5Mac, MacObserver y AppleInsider para el detalle del evento; NYPD/FOX5/amNY (cierres UNGA 2025); un.org (High-level Week 22–28 sep 2026); sangennaronyc.org (17–27 sep 2026, procesión 26 sep 14:00); rockefellercenter.com (pista abre 10 oct); Statue City Cruises (tarifas 2026); MTA (OMNY US$3 / tope semanal US$35); NYC TLC (tarifa fija JFK US$70 + recargos); MLB (Yankees local 22–27 sep); Apple / MacRumors / 9to5Mac (evento 9 sep, Mac mini M6 desde US$899, envíos 22 sep); SUNAT (franquicia US$500, 12%). Los precios de tiendas son de lista y pueden variar. Este documento es planificación de viaje, no asesoría.</p>
-  <p style="margin-top:6px">Versión 3 (web pública, sin datos de reserva) · 9 de setiembre de 2026 · Carpeta: agent-ai / vida / 2026-09-viaje-nueva-york</p>
+  <p style="margin-top:6px">Versión 3.1 (web pública, sin datos de reserva) · 9 de setiembre de 2026 · Carpeta: agent-ai / vida / 2026-09-viaje-nueva-york</p>
 </div>
 </main>
 
